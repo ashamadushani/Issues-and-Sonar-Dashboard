@@ -1,0 +1,592 @@
+<html>
+<head>
+    <title>
+        Issues and Sonar Dashboard Gadget
+    </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/portal/libs/bootstrap_3.3.5/css/daterangepicker.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="/portal/libs/bootstrap_3.3.5/css/themify-icons.css" rel="stylesheet">
+
+    <style type="text/css">
+        height: 100%;
+        body {
+         overflow:hidden;
+        }
+        .sidebar{
+            height:800px !important;
+            overflow:hidden; overflow-y:scroll;
+             margin-top:10px;
+        }
+
+        .left {
+            height:100vh;
+            max-height: 100vh;
+            overflow-y : scroll;
+        }
+        .right {
+
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<br><br>
+
+<div class="container-fluid" id="contents">
+    <div class="row"> jjhxjjbn,mmmmnfhajkhjhhgsfsjksffsgfhsfsgfsfshsfh</divcl>
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="fullDiv" style="background-color:#FFFFFF; height:1450px;">
+
+                <div class="col-xs-12" style="margin-top:-30px;">
+                    <div>
+
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <div class="row">
+                                    <div class="col-xs-2" style="margin-top:20px;">
+                                        <div class="row" style="margin-top:15px;">
+                                            <div class="col-xs-6">
+                                                <div class="row">
+                                                    <div class="col-xs-2"><div style="background-color:#F4A94E; height:15px; width:15px;"></div></div>
+                                                    <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;">Issues</p></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="row">
+                                                    <div class="col-xs-2"><div style="background-color:#4BC2DE; height:15px; width:15px;"></div></div>
+                                                    <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;">Sonar</p></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div  id="product" class="sidebar list-group"></div>
+                                    </div>
+                                    <div class="right col-xs-10" style="border: solid #a9a9a9 1px">
+                                        <div>
+                                            <h2>Issues</h2>
+                                            <div class="container-fluid" style="border: solid #a9a9a9 1px;">
+                                                <div class="container-fluid" >
+
+                                                    <div>
+                                                        <h4 style="padding:10px; text-align:center">Click on the following dropdowns to change the graphs</h4>
+                                                        <div class="row">
+                                                            <div class="col-md-2" style="text-align:center"></div>
+                                                            <div class="col-md-3"  style="text-align:center">
+                                                                <h4>Issue Type</h4>
+                                                                <select id='product-choice' style="width:300px; padding: 5px;">
+                                                                    <option>All</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-2" style="text-align:center"></div>
+                                                            <div class="col-md-3" style="text-align:center">
+                                                                <h4>Severity</h4>
+                                                                <select id='version-choice' style="width:300px; padding: 5px;">
+                                                                    <option>All</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-2" style="text-align:center"></div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row" style="padding:15px;">
+                                                    <div class="card col-xs-12">
+                                                        <div>
+
+                                                            <div>
+                                                                <div  id="main-chart-container" class="card-block" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-xs-6" style="">
+                                                        <div class="card">
+                                                            <div class="card-header" id="issuetype-graph-header">
+                                                                <h5>Issue Type Breakdown Chart</h5>
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <div  id="issuetype-chart-container" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="card">
+                                                            <div class="card-header" id="severity-graph-header">
+                                                                <h5>Severity Breakdown Chart</h5>
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <div  id="severity-chart-container" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="padding:15px 0px 15px 0px;">
+                                                    <div class="col-xs-12" style="">
+                                                        <div class="card">
+                                                            <div class="card-header" id="trend-graph-header">
+                                                                <h5>Historical Trend</h5>
+                                                                <!--<label class="pull-right" id="reportrange" style="padding-top : 10px; padding-right : 20px; background: #fff; cursor: pointer; #ccc;">-->
+                                                                <!--<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;-->
+                                                                <!--<span></span> <b class="caret"></b>-->
+                                                                <!--</label>-->
+                                                            </div>
+                                                            <div class="card-block content-body">
+                                                                <!-- <div  id="trend-chart-container" style="min-width: window.document.body.scrollWidth; height: 375; margin: 0 auto"> -->
+                                                                <!-- <h3 style="text-align:center;">Currently no data to show</h3> -->
+
+                                                                <div class="container-fluid">
+                                                                    <div class="row pull-right" style="padding-left:0">
+
+                                                                        <div class="col-xs-12 btn-group pull-right">
+
+                                                                            <button id="dailyBtn" type="button" class="btn btn-info" autofocus="autofocus">Daily</button>
+                                                                            <button id="monthlyBtn" type="button" class="btn btn-info">Monthly</button>
+                                                                            <button id="quarterlyBtn" type="button" class="btn btn-info">Quarterly</button>
+                                                                            <button id="yearlyBtn" type="button" class="btn btn-info">Yearly</button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-xs-12">
+                                                                            <div id="trend-chart-container" style="min-width: 310px; max-width: 1100px; height: 375px; margin: 0 auto"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- </div> -->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h2>Sonar</h2>
+                                            <div class="container-fluid" style="border: solid #a9a9a9 1px;">
+                                                <div class="container-fluid" >
+
+                                                    <div>
+                                                        <h4 style="padding:10px; text-align:center">Click on the following dropdowns to change the graphs</h4>
+                                                        <div class="row">
+                                                            <div class="col-md-2" style="text-align:center"></div>
+                                                            <div class="col-md-3"  style="text-align:center">
+                                                                <h4>Issue Type</h4>
+                                                                <select id='product-choice' style="width:300px; padding: 5px;">
+                                                                    <option>All</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-2" style="text-align:center"></div>
+                                                            <div class="col-md-3" style="text-align:center">
+                                                                <h4>Severity</h4>
+                                                                <select id='version-choice' style="width:300px; padding: 5px;">
+                                                                    <option>All</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-2" style="text-align:center"></div>
+                                                        </div>
+                                                        <br>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row" style="padding:15px;">
+                                                    <div class="card col-xs-12">
+                                                        <div>
+
+                                                            <div>
+                                                                <div  id="main-chart-container-sonar" class="card-block" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-xs-6" style="">
+                                                        <div class="card">
+                                                            <div class="card-header" id="issuetype-graph-header">
+                                                                <h5>Issue Type Breakdown Chart</h5>
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <div  id="issuetype-chart-container-sonar" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div class="card">
+                                                            <div class="card-header" id="severity-graph-header">
+                                                                <h5>Severity Breakdown Chart</h5>
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <div  id="severity-chart-container-sonar" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="padding:15px 0px 15px 0px;">
+                                                    <div class="col-xs-12" style="">
+                                                        <div class="card">
+                                                            <div class="card-header" id="trend-graph-header">
+                                                                <h5>Historical Trend</h5>
+                                                                <!--<label class="pull-right" id="reportrange" style="padding-top : 10px; padding-right : 20px; background: #fff; cursor: pointer; #ccc;">-->
+                                                                <!--<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;-->
+                                                                <!--<span></span> <b class="caret"></b>-->
+                                                                <!--</label>-->
+                                                            </div>
+                                                            <div class="card-block content-body">
+                                                                <!-- <div  id="trend-chart-container-sonar" style="min-width: window.document.body.scrollWidth; height: 375; margin: 0 auto"> -->
+                                                                <!-- <h3 style="text-align:center;">Currently no data to show</h3> -->
+
+                                                                <div class="container-fluid">
+                                                                    <div class="row pull-right" style="padding-left:0">
+
+                                                                        <div class="col-xs-12 btn-group pull-right">
+
+                                                                            <button id="dailyBtn" type="button" class="btn btn-info" autofocus="autofocus">Daily</button>
+                                                                            <button id="monthlyBtn" type="button" class="btn btn-info">Monthly</button>
+                                                                            <button id="quarterlyBtn" type="button" class="btn btn-info">Quarterly</button>
+                                                                            <button id="yearlyBtn" type="button" class="btn btn-info">Yearly</button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-xs-12">
+                                                                            <div id="trend-chart-container-sonar" style="min-width: 310px; max-width: 1100px; height: 375px; margin: 0 auto"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- </div> -->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    setTimeout(function(){
+        initCharts(response);
+    }, 1000);
+</script>
+
+<!--   Core JS Files   -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- Highcharts JS-->
+<script src="code/highcharts.js"></script>
+<script src="code/modules/data.js"></script>
+<script src="code/modules/drilldown.js"></script>
+
+<!--Custom JS-->
+<script src="js/dashboard.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+
+<script type="text/javascript">
+
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+    var startDate = start.format('YYYY-MM-DD');
+    var endDate = end.format('YYYY-MM-DD');
+
+    $('input[name="daterange"]').daterangepicker();
+    $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+
+        startDate = picker.startDate.format('YYYY-MM-DD');
+        endDate = picker.endDate.format('YYYY-MM-DD');
+        setDate(startDate, endDate);
+        console.log(startDate);
+        console.log(endDate);
+    });
+
+
+</script>
+
+<script type="text/javascript">
+    $(function() {
+
+        var start = moment().subtract(29, 'days');
+        var end = moment();
+
+        function cb(start, end) {
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+
+        $('#reportrange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            ranges: {
+                <!--'Today': [moment(), moment()],-->
+                <!--'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],-->
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+
+        cb(start, end);
+
+    });
+
+    $('#dailyBtn').click(function(){
+        <!--getHistoryForAll("day");-->
+        history("day");
+    });
+    $('#monthlyBtn').click(function(){
+        <!--getHistoryForAll("Month");-->
+        history("Month");
+    });
+    $('#quarterlyBtn').click(function(){
+        <!--getHistoryForAll("Quarter");-->
+        history("Quarter");
+    });
+    $('#yearlyBtn').click(function(){
+        <!--getHistoryForAll("Year");-->
+        history("Year");
+    });
+
+    $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+
+        startDate = picker.startDate.format('YYYY-MM-DD');
+        endDate = picker.endDate.format('YYYY-MM-DD');
+        setDate(startDate, endDate);
+        getHistoryForAll("day");
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    var menuDrillDown=[{"products":"Product 1"},{"products":"Product 2"}];
+    var menuVersionDrillDown=[{"PRODUCT_NAME":"Product 1","VERSION":1},{"PRODUCT_NAME":"Product 2","VERSION":2},{"PRODUCT_NAME":"Product 1","VERSION":2},{"PRODUCT_NAME":"Product 2","VERSION":1}];
+    var queuedDetails = [{"PRODUCT_NAME":"Product 1","VERSION":1,"total":3},{"PRODUCT_NAME":"Product 2","VERSION":2,"total":3}];
+    window.onload = function() {
+        var totalProducts = menuDrillDown.length;
+        var versionCount = menuVersionDrillDown.length;
+        for (var x = 0; x < totalProducts; x++) {
+            document.getElementById('product').innerHTML += "<a href='#collapseProduct"+(parseInt(x)+1)+"' data-toggle='collapse' id='product"+(parseInt(x)+1)+"' class='list-group-item'>"
+                + menuDrillDown[x].products +
+                "<span id='productDevCount"+(parseInt(x)+1)+"' class='badge' style='background-color:#4BC2DE;padding:3px 6px;'></span>" +
+                "<span id='productCount"+(parseInt(x)+1)+"' class='badge' style='background-color:#F4A94E; padding:3px 6px;'></span></a>" +
+                "<div id='collapseProduct"+(parseInt(x)+1)+"' class='panel-collapse collapse' role='tabpanel' aria-labelledby='headingOne'>" +
+                "<div>" +
+                "<ul id='productVersion"+(parseInt(x)+1)+"'>"+
+                ""+
+                "</ul>"+
+                "</div>" +
+                "</div>"
+        }
+
+        //get versions to left side drill down
+        for(var x=0;x<totalProducts;x++){
+            //set first option as All versions
+            document.getElementById('productVersion'+(parseInt(x)+1)).innerHTML +=
+                "<button onclick='leftMenuClick("+(parseInt(x)+1)+","+1+")' class='list-group-item list-group-item-info' style='width:100%; text-align: left;' id='subVersion1'>Total Summary"+
+                "</button>" +
+                "<button onclick='leftMenuClick("+(parseInt(x)+1)+","+0+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='subVersion0'>All Versions"+
+                "</button>";
+            for(var y=0;y<versionCount;y++){
+                var element = document.getElementById('product'+(parseInt(x)+1)).innerHTML;
+                if(element.split("<span")[0].trim() === menuVersionDrillDown[y].PRODUCT_NAME){
+                    document.getElementById('productVersion' + (parseInt(x) + 1)).innerHTML +=
+                        "<button onclick='leftMenuClick(" + (parseInt(x) + 1) + "," + (parseInt(y) + 1) + ")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='subVersion" + (parseInt(y) + 1) + "'>Version " +
+                        menuVersionDrillDown[y].VERSION +
+                        "</button>";
+                }
+            }
+        }
+
+
+
+
+        if(!jQuery.isEmptyObject(queuedDetails)){
+            var count = queuedDetails.length;
+            for(var x=0;x<totalProducts;x++){
+                document.getElementById('productCount'+(parseInt(x)+1)).innerHTML = '';
+            }
+
+            if(count === undefined){
+                for(var x=0;x<totalProducts;x++){
+                    var element = document.getElementById('product'+(parseInt(x)+1)).innerHTML;
+                    if(element.split("<span")[0].trim() === queuedDetails.PRODUCT_NAME.trim()){
+                        document.getElementById('productCount'+(parseInt(x)+1)).innerHTML = queuedDetails.total;
+                    }
+                }
+            }else{
+                for(var x=0;x<totalProducts;x++){
+                    for(var y=0;y<count;y++){
+                        var element = document.getElementById('product'+(parseInt(x)+1)).innerHTML;
+                        if(element.split("<span")[0].trim() === queuedDetails[y].PRODUCT_NAME.trim()){
+                            document.getElementById('productCount'+(parseInt(x)+1)).innerHTML = queuedDetails[y].total;
+                        }
+                    }
+                }
+            }
+        }else{
+            for(var x=0;x<totalProducts;x++){
+                document.getElementById('productCount'+(parseInt(x)+1)).innerHTML = '';
+            }
+        }
+
+
+    }
+</script>
+
+<script>
+    $(function(){
+        $("#area-choice").change(function(){
+            var $areaChoice = $(this);
+
+            if($areaChoice.val() == 'all'){
+                setCurrentState("0");
+                setCurrentArea(null);
+                callbackForStateChange("0");
+
+                var $productChoice = $("#product-choice");
+
+                $productChoice.empty();
+                $productChoice.append("<option value=''>Select an area</option>");
+
+                var $versionChoice = $("#version-choice");
+
+                $versionChoice.empty();
+                $versionChoice.append("<option value=''>Select a product</option>");
+
+
+            } else {
+                setCurrentState("1");
+                setCurrentArea($areaChoice.val());
+                callbackForStateChange("1");
+
+
+                var productIndex = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.products.map(function(d){return d['name']}).indexOf(currentArea);
+                var products = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.products.slice(productIndex, productIndex + 1).map(function(d){return d['name']});
+
+                var $productChoice = $("#product-choice");
+
+                $productChoice.empty();
+                $productChoice.append("<option value='all'>All Products</option>");
+
+                $.each(products, function(index, value) {
+                    $productChoice.append("<option value='" + value + "'>" + value + "</option>");
+                });
+
+            }
+
+        })
+
+        $("#product-choice").change(function(){
+            var $productChoice = $(this);
+
+            if($productChoice.val() == 'all'){
+                setCurrentState("1");
+                setCurrentProduct(null);
+                callbackForStateChange("1");
+
+                var $versionChoice = $("#version-choice");
+
+                $versionChoice.empty();
+                $versionChoice.append("<option value='all'>Select a version</option>");
+
+            } else {
+                setCurrentState("12");
+                setCurrentProduct($productChoice.val());
+                callbackForStateChange("12");
+
+                var products = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.products.map(function(d){return d['name']});
+                var productIndex = products.indexOf(currentProduct);
+
+                var versions = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.products[productIndex].version.map(function(d){return d['name']});
+
+                var $versionChoice = $("#version-choice");
+
+                $versionChoice.empty();
+                $versionChoice.append("<option value='all'>All Versions</option>");
+
+                $.each(versions, function(index, value) {
+                    $versionChoice.append("<option value='" + value + "'>" + value + "</option>");
+                });
+            }
+
+
+
+
+        })
+
+        $("#version-choice").change(function(){
+            var $versionChoice = $(this);
+
+            setCurrentState("123");
+            setCurrentVersion($versionChoice.val());
+            callbackForStateChange("123");
+
+            var products = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.products.map(function(d){return d['name']});
+            var productIndex = products.indexOf(currentProduct);
+
+            var versions = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.products[productIndex].version.map(function(d){return d['name']});
+            var versionIndex = versions.indexOf(currentVersion);
+
+            var components = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.products[productIndex].components.map(function(d){return d['name']});
+
+
+
+
+        })
+    })
+
+</script>
+
+
+</body>
+</html>

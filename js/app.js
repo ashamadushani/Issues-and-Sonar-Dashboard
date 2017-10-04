@@ -87,6 +87,7 @@ function callbackForStateChange(state){
             }]
 
 
+
             //set the data for the issuetype chart
             issuetypeData = WSO2_PRODUCT_COMPONENT_ISSUES_DATA.issuetype;
 
@@ -1921,26 +1922,26 @@ function history(period) {
 function getHistoryForAll(period) {
     debugger;
     var historyForAll;
-    $.ajax({
-        type: "GET",
-        // beforeSend: function(request) {
-        //     request.setRequestHeader("Authorization", "Bearer 6831161b-0fe8-33cb-b4cb-df38e9acf924");
-        // },
-        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/jira/issues/history/all',
-        data:{
-            both: both,
-            issuetype: currentIssueType,
-            severity: currentSeverity,
-            dateFrom : this.startDate,
-            dateTo : this.endDate,
-            period: period
-        },
-        async: false,
-        success: function(data){
-            historyForAll = data.data.data;
-            console.log(historyForAll);
-        }
-    });
+//    $.ajax({
+//        type: "GET",
+//        // beforeSend: function(request) {
+//        //     request.setRequestHeader("Authorization", "Bearer 6831161b-0fe8-33cb-b4cb-df38e9acf924");
+//        // },
+//        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/jira/issues/history/all',
+//        data:{
+//            both: both,
+//            issuetype: currentIssueType,
+//            severity: currentSeverity,
+//            dateFrom : this.startDate,
+//            dateTo : this.endDate,
+//            period: period
+//        },
+//        async: false,
+//        success: function(data){
+//            historyForAll = data.data.data;
+//            console.log(historyForAll);
+//        }
+//    });
     historySeriesData = [];
 
     for(var i = 0; i < historyForAll.length; i++){

@@ -229,7 +229,7 @@ function callbackForStateChange(state){
             currentPlatformChartSubtitle = null;
 
             createSeverityChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -296,7 +296,7 @@ function callbackForStateChange(state){
             currentPlatformChartSubtitle = null;
 
             createIssueTypeChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -643,7 +643,7 @@ function callbackForStateChange(state){
             currentPlatformChartSubtitle = null;
 
             createSeverityChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -717,7 +717,7 @@ function callbackForStateChange(state){
             currentPlatformChartSubtitle = null;
 
             createIssueTypeChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -947,7 +947,7 @@ function callbackForStateChange(state){
             currentPlatformChartSubtitle = null;
 
             createSeverityChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -1023,7 +1023,7 @@ function callbackForStateChange(state){
             currentPlatformChartSubtitle = null;
 
             createIssueTypeChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -1175,7 +1175,7 @@ function callbackForStateChange(state){
 
             createIssueTypeChart();
             createSeverityChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -1252,7 +1252,7 @@ function callbackForStateChange(state){
 
             
             createSeverityChart();
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -1338,7 +1338,7 @@ function callbackForStateChange(state){
 
             createIssueTypeChart();
             
-            createPlatformChart();
+            //createPlatformChart();
 
             //sajinie's work-------------------------------------------------------------
             var dateFrom = moment().subtract(29, 'days');
@@ -1380,7 +1380,7 @@ function createCharts(){
     createMainChart();
     createIssueTypeChart();
     createSeverityChart();
-    createPlatformChart();
+    //createPlatformChart();
 }
 
 

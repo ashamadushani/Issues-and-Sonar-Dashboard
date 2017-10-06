@@ -1922,28 +1922,28 @@ function history(period) {
 function getHistoryForAll(period) {
     debugger;
     var historyForAll;
-//    $.ajax({
-//        type: "GET",
-//        // beforeSend: function(request) {
-//        //     request.setRequestHeader("Authorization", "Bearer 6831161b-0fe8-33cb-b4cb-df38e9acf924");
-//        // },
-//        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/jira/issues/history/all',
-//        data:{
-//            both: both,
-//            issuetype: currentIssueType,
-//            severity: currentSeverity,
-//            dateFrom : this.startDate,
-//            dateTo : this.endDate,
-//            period: period
-//        },
-//        async: false,
-//        success: function(data){
-//            historyForAll = data.data.data;
-//            console.log(historyForAll);
-//        }
-//    });
+    $.ajax({
+        type: "GET",
+        // beforeSend: function(request) {
+        //     request.setRequestHeader("Authorization", "Bearer 6831161b-0fe8-33cb-b4cb-df38e9acf924");
+        // },
+        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/jira/issues/history/all',
+        data:{
+            both: both,
+            issuetype: currentIssueType,
+            severity: currentSeverity,
+            dateFrom : this.startDate,
+            dateTo : this.endDate,
+            period: period
+        },
+        async: false,
+        success: function(data){
+            historyForAll = data.data.data;
+            console.log(historyForAll);
+        }
+    });
     historySeriesData = [];
-
+debugger;
     for(var i = 0; i < historyForAll.length; i++){
         name = historyForAll[i].date;
         var y;
@@ -2028,7 +2028,7 @@ function getHistory(period) {
         }
     });
     historySeriesData = [];
-
+debugger;
     for(var i = 0; i < historyForAll.length; i++){
         name = historyForAll[i].date;
         var y;
@@ -2040,6 +2040,7 @@ function getHistory(period) {
         historySeriesData.push({name: name, y: y});
     }
     createTrendChart(historySeriesData);
+    debugger;
     // return historyForAll;
 
 }

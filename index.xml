@@ -121,7 +121,7 @@
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-md-2" style="text-align:center; margin-top: 40px;">
+                                                    <div class="col-md-2" style="text-align:center; margin-top: 40tpx;">
                                                         <button  type="button" class="btn btn-default" onclick="resetIssueCharts()">
                                                             Reset
                                                         </button>
@@ -180,12 +180,21 @@
                                                             <div class="col-xs-4">
                                                                 <h4>Historical Trend</h4>
                                                             </div>
-                                                            <div class="col-xs-4">
-                                                                <p style="text-align: right; margin-top:10px;">Select a Date Range:</p>
-                                                            </div>
-                                                            <div class="col-xs-4" style="margin-top:3px; margin-right:0px">
-                                                                <input type="text" id="issue-calender" style="border:1px solid #bcb7b3; background-color: #FFFFFF; width:100%;" class="form-control">
-                                                                <i class="fa fa-calendar" style="float:right; margin-top:-12px;"></i>
+                                                            <div class="col-xs-8">
+                                                                <div class="row">
+                                                                    <div class="col-xs-3"></div>
+                                                                    <div class="col-xs-4">
+                                                                        <p style="text-align: right; margin-top:10px">Select a Date Range:</p>
+                                                                    </div>
+                                                                    <div class="col-xs-5" style="margin-top:3px; margin-right:0px;margin-left:0px">
+                                                                        <label class="pull-right" id="issue-calender" style="padding:5px 20px 5px 20px; background: #fff; cursor: pointer; #ccc;">
+                                                                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                                                                            <span></span> <b class="caret"></b>
+                                                                        </label>
+                                                                <!--<input type="text" id="issue-calender" style="border:1px solid #bcb7b3; background-color: #FFFFFF; width:100%;" class="form-control">-->
+                                                                <!--<i class="fa fa-calendar" style="float:right; margin-top:-12px;"></i>-->
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </header>
@@ -290,17 +299,23 @@
                                                             <div class="col-xs-4">
                                                                 <h4>Historical Trend</h4>
                                                             </div>
-                                                            <div class="col-xs-4">
-                                                                <p style="text-align: right; margin-top:10px;">Select a Date Range:</p>
-                                                            </div>
-                                                            <div class="col-xs-4" style="margin-top:3px; margin-right:0px">
-                                                            <label class="pull-right" id="sonar-calender" style="padding-top : 10px; padding-right : 20px; background: #fff; cursor: pointer; #ccc;">
-                                                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                                                                <span></span> <b class="caret"></b>
-                                                            </label>
+                                                            <div class="col-xs-8">
+                                                                <div class="row">
+                                                                    <div class="col-xs-3"></div>
+                                                                    <div class="col-xs-4">
+                                                                        <p style="text-align: right; margin-top:10px">Select a Date Range:</p>
+                                                                    </div>
+                                                                    <div class="col-xs-5" style="margin-top:3px; margin-right:0px;margin-left:0px">
+                                                                        <label class="pull-right" id="sonar-calender" style="padding:5px 20px 5px 20px; background: #fff; cursor: pointer; #ccc;">
+                                                                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                                                                            <span></span> <b class="caret"></b>
+                                                                        </label>
                                                                 <!--<input class="pull-right" type="text" id="sonar-calender" style="border:1px solid #bcb7b3; background-color: #FFFFFF; width:100%;" class="form-control">-->
                                                                 <!--<i class="fa fa-calendar" style="float:right; margin-top:-12px;"></i>-->
+                                                                    </div>
+                                                                </div>
                                                             </div>
+
                                                         </div>
                                                     </header>
                                                     <div class="content-body">

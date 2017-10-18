@@ -12,6 +12,15 @@ var currentSonarIssueType;
 var currentSonarSeverity;
 var sonarBoth;
 
+var issueStartDate;
+var issueEndDate;
+var sonarStartDate;
+var sonarEndDate;
+
+var issueHistoryTitle;
+var sonarHistoryTitle;
+
+
 var currentIssueMainChartData;
 var currentIssueIssueTypeChartData;
 var currentIssueSeverityChartData;
@@ -133,11 +142,14 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         var e = document.getElementById("sonar-issuetype-choice");
         var selectedSonarType = e.options[e.selectedIndex].value;
         debugger;
-        for (var i = 0; i < sonarIssuetypeChart.series[0].data.length; i++) {
-            sonarIssuetypeChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+
+        if(parseInt(selectedSonarType) !== 0){
+            for (var i = 0; i < sonarIssuetypeChart.series[0].data.length; i++) {
+                sonarIssuetypeChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+            }
+            sonarIssuetypeChart.get(parseInt(selectedSonarType)).update({ color: '#118983' }, true, false);
+            sonarIssuetypeChart.get(parseInt(selectedSonarType)).select();
         }
-        sonarIssuetypeChart.get(parseInt(selectedSonarType)).update({ color: '#118983' }, true, false);
-        sonarIssuetypeChart.get(parseInt(selectedSonarType)).select();
         selectSonarIssueTypePieChart(parseInt(selectedSonarType));
     });
 
@@ -158,12 +170,15 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         var e = document.getElementById("sonar-severity-choice");
         var selectedSonarSeverity = e.options[e.selectedIndex].value;
         debugger;
-        for (var i = 0; i < sonarSeverityChart.series[0].data.length; i++) {
-            debugger;
-            sonarSeverityChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+
+        if(parseInt(selectedSonarSeverity) !== 0){
+            for (var i = 0; i < sonarSeverityChart.series[0].data.length; i++) {
+                debugger;
+                sonarSeverityChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+            }
+            sonarSeverityChart.get(parseInt(selectedSonarSeverity)).update({ color: '#118983' }, true, false);
+            sonarSeverityChart.get(parseInt(selectedSonarSeverity)).select();
         }
-        sonarSeverityChart.get(parseInt(selectedSonarSeverity)).update({ color: '#118983' }, true, false);
-        sonarSeverityChart.get(parseInt(selectedSonarSeverity)).select();
         selectSonarSeverityPieChart(parseInt(selectedSonarSeverity));
     });
 }
@@ -186,12 +201,15 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         var e = document.getElementById("issuetype-choice");
         var selectedType = e.options[e.selectedIndex].value;
         debugger;
-        for (var i = 0; i < issueIssuetypeChart.series[0].data.length; i++) {
-            issueIssuetypeChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+
+        if(parseInt(selectedType) !== 0){
+            for (var i = 0; i < issueIssuetypeChart.series[0].data.length; i++) {
+                issueIssuetypeChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+            }
+            console.log(selectedType);
+            issueIssuetypeChart.get(parseInt(selectedType)).update({ color: '#118983' }, true, false);
+            issueIssuetypeChart.get(parseInt(selectedType)).select();
         }
-        console.log(selectedType);
-        issueIssuetypeChart.get(parseInt(selectedType)).update({ color: '#118983' }, true, false);
-        issueIssuetypeChart.get(parseInt(selectedType)).select();
         selectIssueIssueTypePieChart(parseInt(selectedType));
     });
 
@@ -212,11 +230,14 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         var e = document.getElementById("severity-choice");
         var selectedSeverity = e.options[e.selectedIndex].value;
         debugger;
-        for (var i = 0; i < issueSeverityChart.series[0].data.length; i++) {
-            issueSeverityChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+
+        if(parseInt(selectedSeverity) !== 0){
+            for (var i = 0; i < issueSeverityChart.series[0].data.length; i++) {
+                issueSeverityChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+            }
+            issueSeverityChart.get(parseInt(selectedSeverity)).update({ color: '#118983' }, true, false);
+            issueSeverityChart.get(parseInt(selectedSeverity)).select();
         }
-        issueSeverityChart.get(parseInt(selectedSeverity)).update({ color: '#118983' }, true, false);
-        issueSeverityChart.get(parseInt(selectedSeverity)).select();
         selectIssueSeverityPieChart(parseInt(selectedSeverity));
     });
 
@@ -228,6 +249,8 @@ function selectIssueIssueTypePieChart(issueTypeId) {
     currentIssueIssueType = issueTypeId;
     if (issueTypeId !== 0){
         issueIssueTypeIsSelected = true;
+    }else{
+        issueIssueTypeIsSelected = false;
     }
 
     var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
@@ -260,6 +283,8 @@ function selectIssueSeverityPieChart(severityId) {
     currentIssueSeverity = severityId;
     if (severityId !== 0){
         issueSeverityIsSelected = true;
+    }else{
+        issueSeverityIsSelected = false;
     }
     var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
 
@@ -294,7 +319,9 @@ function selectSonarIssueTypePieChart(issueTypeId) {
     if(issueTypeId !== 0){
         debugger;
         sonarIssueTypeIsSelected = true;
-
+    }else{
+        debugger;
+        sonarIssueTypeIsSelected = false;
     }
     var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+issueTypeId+'/severity/'+currentSonarSeverity;
 
@@ -326,6 +353,9 @@ function selectSonarSeverityPieChart(severityId) {
     if(severityId !== 0){
         debugger;
         sonarSeverityIsSelected = true;
+    }else{
+        debugger;
+        sonarSeverityIsSelected = false;
     }
     var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentSonarIssueType+'/severity/'+severityId;
 
@@ -417,11 +447,18 @@ function loadSidePane(sidePaneDetails) {
     debugger;
     var totalProducts = sidePaneDetails.length;
     debugger;
+    document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='allAreaClick()' data-parent='#area' href='#collapseArea"+(-1)+"' data-toggle='collapse' id='' class='list-group-item'>"
+        + "All Products" +
+        "<span id='sonarCountAll' class='badge' style='width:45px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
+        "<span id='issueCountAll' class='badge' style='width:35px; background-color:#F4A94E; padding:3px 6px;'></span></button>" +
+        "</div>"
+
+
     for (var x = 0; x < totalProducts; x++) {
         document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='"+(sidePaneDetails[x].id)+"' class='list-group-item'>"
             + sidePaneDetails[x].name        +
-            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='min-width:35px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
-            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='min-width:30px; background-color:#F4A94E; padding:3px 6px;'></span></button>" +
+            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:45px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
+            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:35px; background-color:#F4A94E; padding:3px 6px;'></span></button>" +
             "<div id='collapseArea"+(sidePaneDetails[x].id)+"'  style='transition: all .8s ease;' class='panel-collapse collapse' role='tabpanel' aria-labelledby='headingOne'>" +
             "<div class='sidebarInside'>" +
             "<ul id='product"+(sidePaneDetails[x].id)+"' >"+
@@ -434,6 +471,41 @@ function loadSidePane(sidePaneDetails) {
         document.getElementById('issueCount'+(parseInt(x)+1)).innerHTML = sidePaneDetails[x].issues;
         document.getElementById('sonarCount'+(parseInt(x)+1)).innerHTML = sidePaneDetails[x].sonar;
     }
+}
+
+function allAreaClick() {
+    debugger;
+    var sidePaneDetails;
+    var content;
+    $.ajax({
+        type: "GET",
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
+        // url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
+        async: false,
+        success: function(data){
+            debugger;
+            sidePaneDetails = data.data.items;
+            content = data.data;
+            currentData = data.data;
+        }
+    });
+    debugger;
+    issueIssueTypeIsSelected = false;
+    issueSeverityIsSelected = false;
+    sonarIssueTypeIsSelected = false;
+    sonarSeverityIsSelected = false;
+
+    currentIssueIssueType = 0;
+    currentIssueSeverity = 0;
+    currentSonarIssueType = 0;
+    currentSonarSeverity = 0;
+
+    currentCategory = "all";
+    currentCategoryId = 0;
+
+    initChart(content);
+    debugger;
+    initSonarChart(content);
 }
 
 function leftMenuAreaClick(areaId){
@@ -490,8 +562,8 @@ function leftMenuAreaClick(areaId){
         document.getElementById('product'+(areaId)).innerHTML +=
             "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'>" +
             sidePaneDetails[y].name +
-            "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:40px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
-            "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:30px; background-color:#F4A94E; padding:3px 6px;'></span></button>";
+            "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:45px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
+            "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:35px; background-color:#F4A94E; padding:3px 6px;'></span></button>";
         
         document.getElementById('issueProductCount'+areaId+(parseInt(y))).innerHTML = issuecount;
         document.getElementById('sonarProductCount'+areaId+(parseInt(y))).innerHTML = sonarCount;
@@ -606,6 +678,14 @@ function loadComponentDropdown(sidePaneDetails) {
     debugger;
 
     if(sidePaneDetails.length !== 0){
+        var optionNone =  document.createElement('option');
+        var idNone = -1;
+        var nameNone =  "Select a Component";
+
+        optionNone.setAttribute("value",idNone);
+        optionNone.appendChild(document.createTextNode(nameNone));
+        select.appendChild(optionNone);
+
         var  totalComponents = sidePaneDetails.length;
         for(var a=0; a<totalComponents; a++) {
             var option = document.createElement('option');
@@ -628,16 +708,18 @@ function loadComponentDropdown(sidePaneDetails) {
         var e = document.getElementById("sel1");
         var strUser = e.options[e.selectedIndex].value;
         debugger;
-        for (var i = 0; i < issueMainChart.series[0].data.length; i++) {
-            issueMainChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
-        }
-        issueMainChart.get(parseInt(strUser)).update({ color: '#118983' }, true, false);
+        if(parseInt(strUser) > 0){
+            for (var i = 0; i < issueMainChart.series[0].data.length; i++) {
+                issueMainChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+            }
+            issueMainChart.get(parseInt(strUser)).update({ color: '#118983' }, true, false);
 
-        for (var i = 0; i < sonarMainChart.series[0].data.length; i++) {
-            sonarMainChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+            for (var i = 0; i < sonarMainChart.series[0].data.length; i++) {
+                sonarMainChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
+            }
+            sonarMainChart.get(parseInt(strUser)).update({ color: '#118983' }, true, false);
+            loadComponentDetails(parseInt(strUser));
         }
-        sonarMainChart.get(parseInt(strUser)).update({ color: '#118983' }, true, false);
-        loadComponentDetails(parseInt(strUser));
     });
 
 
@@ -682,8 +764,10 @@ function loadComponentDetails(componentId) {
             currentData = data.data;
         }
     });
+debugger;
 
-
+    console.log("content");
+    console.log(content);
     initChart(content);
     initSonarChart(content);
 }
@@ -719,7 +803,7 @@ function initChart(content) {
         }]
         createMainChart();
     }
-    if (currentCategory === "component"){
+    if (currentCategory === "component" && issueIssueTypeIsSelected === true && issueSeverityIsSelected === true){
         debugger;
         productData = content.items;
 
@@ -813,11 +897,9 @@ function initChart(content) {
     debugger;
     var dateFrom = moment().subtract(29, 'days');
     var dateTo= moment();
-    this.startDate = dateFrom.format('YYYY-MM-DD');
-    this.endDate = dateTo.format('YYYY-MM-DD');
-    this.period = "day";
-    // history(category, "day");
-    getIssueTrendLineHistory("day")
+    issueStartDate = dateFrom.format('YYYY-MM-DD');
+    issueEndDate = dateTo.format('YYYY-MM-DD');
+    getIssueTrendLineHistory("day");
     debugger;
 }
 
@@ -921,15 +1003,12 @@ function initSonarChart(content) {
         createSonarSeverityChart();
     }
 
-
-    // createSonarCharts(category);
-
     debugger;
     var dateFrom = moment().subtract(29, 'days');
     var dateTo= moment();
-    this.startDate = dateFrom.format('YYYY-MM-DD');
-    this.endDate = dateTo.format('YYYY-MM-DD');
-    this.period = "day";
+    sonarStartDate = dateFrom.format('YYYY-MM-DD');
+    sonarEndDate = dateTo.format('YYYY-MM-DD');
+    // this.period = "day";
     // history(category, "day");
     getSonarTrendLineHistory("day");
     debugger;
@@ -1440,6 +1519,29 @@ function createSonarTrendChart(data){
         }]
 
     });
+
+}
+
+function setIssueDate(start, end) {
+    issueStartDate = start;
+    issueEndDate = end;
+    issueHistoryTitle =  startDate + " - " + endDate;
+    console.log(issueStartDate);
+    console.log(issueEndDate);
+}
+
+function setSonarDate(start, end) {
+    sonarStartDate = start;
+    sonarEndDate = end;
+    sonarHistoryTitle =  startDate + " - " + endDate;
+    console.log(sonarStartDate);
+    console.log(sonarEndDate);
+}
+
+function setIssueCalender() {
+
+}
+function setSonarCalender() {
 
 }
 

@@ -531,7 +531,7 @@ function leftMenuProductClick(productId) {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/'+currentAreaId+'/product/'+productId ,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/product/'+productId ,
         async: false,
         success: function(data){
             debugger;
@@ -674,7 +674,7 @@ function loadComponentDetails(componentId) {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/' + currentAreaId + '/component/' + componentId,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/component/' + componentId,
         async: false,
         success: function(data){
             debugger;
@@ -1365,6 +1365,9 @@ function createIssueTrendChart(data){
                 text: 'Number of Issues'
             }
         },
+        credits: {
+            enabled: false
+        },
         legend: {
             layout: 'vertical',
             align: 'right',
@@ -1400,6 +1403,9 @@ function createSonarTrendChart(data){
         },
         title: {
             text: ""
+        },
+        credits: {
+            enabled: false
         },
         xAxis: {
             type: 'category'

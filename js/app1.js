@@ -931,7 +931,7 @@ function initSonarChart(content) {
     this.endDate = dateTo.format('YYYY-MM-DD');
     this.period = "day";
     // history(category, "day");
-    // getSonarTrendLineHistory("day");
+    getSonarTrendLineHistory("day");
     debugger;
 
 }
@@ -1317,20 +1317,21 @@ function getIssueTrendLineHistory(period) {
 function getSonarTrendLineHistory(period) {
     debugger;
     var historyForAll;
+    var history;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/sonar/history/'+ currentCategory + '/' + currentCategoryId,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/history/'+ currentCategory + '/' + currentCategoryId,
         data:{
-            issuetype: currentSonarIssueType,
-            severity: currentSonarSeverity,
+            issuetypeId: currentSonarIssueType,
+            severityId: currentSonarSeverity,
             dateFrom : this.startDate,
             dateTo : this.endDate,
             period: period
         },
         async: false,
         success: function(data){
-            history = data.data.data;
-            console.log(historyForAll);
+            history = data.data;
+            console.log(history);
         }
     });
     debugger;
@@ -1393,7 +1394,7 @@ function createIssueTrendChart(data){
 }
 function createSonarTrendChart(data){
     debugger;
-    Highcharts.chart('trend-chart-container', {
+    Highcharts.chart('trend-chart-container-sonar', {
         chart: {
             zoomType: 'x'
         },

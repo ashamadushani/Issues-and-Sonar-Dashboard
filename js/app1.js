@@ -44,7 +44,7 @@ var issueSeverityIsSelected;
 var sonarIssueTypeIsSelected;
 var sonarSeverityIsSelected;
 
-var currentIssueIssuetType;
+var currentIssueIssueType;
 var currentIssueSeverity;
 var currentSonarIssueType;
 var currentSonarSeverity;
@@ -57,7 +57,7 @@ function initPage() {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/issues/all',
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
         // url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
         async: false,
         success: function(data){
@@ -73,7 +73,7 @@ function initPage() {
     sonarIssueTypeIsSelected = false;
     sonarSeverityIsSelected = false;
 
-    currentIssueIssuetType = 0;
+    currentIssueIssueType = 0;
     currentIssueSeverity = 0;
     currentSonarIssueType = 0;
     currentSonarSeverity = 0;
@@ -98,7 +98,7 @@ function loadTypeAndSeverityDropdowns() {
     $.ajax({
         type: "GET",
         // url: 'https://192.168.8.100:9092/internal/product-quality/v1.0/jira/getIssueTypesAndSeverities',
-        url: 'https://192.168.8.101:9092/internal/product-quality/v1.0/jira/getIssueTypesAndSeverities',
+        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/jira/getIssueTypesAndSeverities',
         async: false,
         success: function(data){
             debugger;
@@ -225,12 +225,12 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
 
 
 function selectIssueIssueTypePieChart(issueTypeId) {
-    currentIssueIssuetType = issueTypeId;
+    currentIssueIssueType = issueTypeId;
     if (issueTypeId !== 0){
         issueIssueTypeIsSelected = true;
     }
 
-    var url = 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
+    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
 
     if (issueSeverityIsSelected === true){
         debugger;
@@ -261,7 +261,7 @@ function selectIssueSeverityPieChart(severityId) {
     if (severityId !== 0){
         issueSeverityIsSelected = true;
     }
-    var url = 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssuetType+'/severity/'+severityId;
+    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
 
 
     if (issueIssueTypeIsSelected === true){
@@ -286,15 +286,17 @@ function selectIssueSeverityPieChart(severityId) {
     });
     initChart(content);
 }
+
 function selectSonarIssueTypePieChart(issueTypeId) {
 
     debugger;
     currentSonarIssueType = issueTypeId;
     if(issueTypeId !== 0){
+        debugger;
         sonarIssueTypeIsSelected = true;
 
     }
-    var url = 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/sonar/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
+    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+issueTypeId+'/severity/'+currentSonarSeverity;
 
     if (sonarSeverityIsSelected === true){
         debugger;
@@ -322,9 +324,10 @@ function selectSonarIssueTypePieChart(issueTypeId) {
 function selectSonarSeverityPieChart(severityId) {
     currentSonarSeverity = severityId;
     if(severityId !== 0){
+        debugger;
         sonarSeverityIsSelected = true;
     }
-    var url = 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentIssueIssuetType+'/severity/'+severityId;
+    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentSonarIssueType+'/severity/'+severityId;
 
     if (sonarIssueTypeIsSelected === true){
         debugger;
@@ -362,7 +365,7 @@ function resetSonarCharts() {
     debugger;
     $.ajax({
         type: "GET",
-        url: 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentIssueIssuetType+'/severity/'+currentIssueSeverity,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentSonarIssueType+'/severity/'+currentSonarSeverity,
         async: false,
         data:{
             category: currentCategory,
@@ -380,7 +383,7 @@ function resetSonarCharts() {
 }
 
 function resetIssueCharts() {
-    currentIssueIssuetType = 0;
+    currentIssueIssueType = 0;
     currentIssueSeverity = 0;
     issueIssueTypeIsSelected = false;
     issueSeverityIsSelected = false;
@@ -393,7 +396,7 @@ function resetIssueCharts() {
     debugger;
     $.ajax({
         type: "GET",
-        url: 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssuetType+'/severity/'+currentIssueSeverity,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity,
         async: false,
         data:{
             category: currentCategory,
@@ -443,7 +446,7 @@ function leftMenuAreaClick(areaId){
     sonarIssueTypeIsSelected = false;
     sonarSeverityIsSelected = false;
 
-    currentIssueIssuetType = 0;
+    currentIssueIssueType = 0;
     currentIssueSeverity = 0;
     currentSonarIssueType = 0;
     currentSonarSeverity = 0;
@@ -467,7 +470,7 @@ function leftMenuAreaClick(areaId){
     debugger;
     $.ajax({
         type: "GET",
-        url: 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/issues/area/'+ areaId,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/'+ areaId,
         async: false,
         success: function(data){
             debugger;
@@ -503,7 +506,7 @@ function leftMenuProductClick(productId) {
     currentCategoryId = productId;
     currentCategory = "product";
 
-    currentIssueIssuetType = 0;
+    currentIssueIssueType = 0;
     currentIssueSeverity = 0;
     currentSonarIssueType = 0;
     currentSonarSeverity = 0;
@@ -528,7 +531,7 @@ function leftMenuProductClick(productId) {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/issues/area/'+currentAreaId+'/product/'+productId ,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/'+currentAreaId+'/product/'+productId ,
         async: false,
         success: function(data){
             debugger;
@@ -550,7 +553,7 @@ function leftMenuVersionClick(version) {
     currentVersion = version;
     currentComponentId = 0;
 
-    currentIssueIssuetType = 0;
+    currentIssueIssueType = 0;
     currentIssueSeverity = 0;
     currentSonarIssueType = 0;
     currentSonarSeverity = 0;
@@ -646,7 +649,7 @@ function loadComponentDetails(componentId) {
     currentCategoryId = componentId;
     currentCategory = "component";
 
-    currentIssueIssuetType = 0;
+    currentIssueIssueType = 0;
     currentIssueSeverity = 0;
     currentSonarIssueType = 0;
     currentSonarSeverity = 0;
@@ -671,7 +674,7 @@ function loadComponentDetails(componentId) {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://57eeb96f.ngrok.io/internal/product-quality/v1.0/issues/area/' + currentAreaId + '/component/' + componentId,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/' + currentAreaId + '/component/' + componentId,
         async: false,
         success: function(data){
             debugger;
@@ -814,7 +817,7 @@ function initChart(content) {
     this.endDate = dateTo.format('YYYY-MM-DD');
     this.period = "day";
     // history(category, "day");
-    // getIssueTrendLineHistory("day")
+    getIssueTrendLineHistory("day")
     debugger;
 }
 
@@ -1281,20 +1284,22 @@ function createSonarSeverityChart(){
 function getIssueTrendLineHistory(period) {
     debugger;
     var historyForAll;
+    var history;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/issues/history/'+ currentCategory + '/' + currentCategoryId,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/history/'+ currentCategory + '/' + currentCategoryId,
         data:{
-            issuetype: currentIssueIssueType,
-            severity: currentIssueSeverity,
+            severityId: currentIssueSeverity,
+            issuetypeId: currentIssueIssueType,
             dateFrom : this.startDate,
             dateTo : this.endDate,
             period: period
         },
         async: false,
         success: function(data){
-            history = data.data.data;
-            console.log(historyForAll);
+            console.log("checking");
+            console.log(data.data);
+            history = data.data;
         }
     });
     debugger;

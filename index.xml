@@ -150,7 +150,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px;">
-                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-size:1.1vw" data-toggle="tooltip" data-placement="bottom" title="Reset Filters">
+                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-size:1.1vw" data-placement="bottom" title="Reset Filters">
                                                             <i class="fa fa-refresh" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -163,7 +163,7 @@
                                             <div class="col-xs-12" style="padding:15px">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-issues"  id="main-graph-header">
-                                                        <h4 style="font-size:1vw" id="issueMainChartHeader">Issue Type Breakdown</h4>
+                                                        <h4 style="font-size:1vw" id="issueMainChartHeader">Issue Count Breakdown</h4>
                                                     </header>
                                                     <div>
                                                         <div  id="main-chart-container" class="" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
@@ -272,7 +272,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px">
-                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:1.1vw" data-toggle="tooltip" data-placement="bottom" title="Reset Filters">
+                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:1.1vw" data-placement="bottom" title="Reset Filters">
                                                             <i class="fa fa-refresh" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -283,7 +283,7 @@
                                             <div class="col-xs-12" style="padding:15px">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-sonar" id="main-graph-header-sonar">
-                                                        <h4 style="font-size:1vw" style="font-size:1vw" id="sonarMainChartHeader">Issue Type Breakdown</h4>
+                                                        <h4 style="font-size:1vw" style="font-size:1vw" id="sonarMainChartHeader">Sonar Issue Count Breakdown</h4>
                                                     </header>
                                                     <div>
                                                         <div  id="main-chart-container-sonar" class="" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>

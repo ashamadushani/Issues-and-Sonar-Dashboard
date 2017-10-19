@@ -20,7 +20,6 @@ var sonarEndDate;
 var issueHistoryTitle;
 var sonarHistoryTitle;
 
-
 var currentIssueMainChartData;
 var currentIssueIssueTypeChartData;
 var currentIssueSeverityChartData;
@@ -60,6 +59,9 @@ var currentSonarSeverity;
 
 var currentCategory;
 
+var sameAreaIsSelected;
+var isExpanded;
+
 function initPage() {
     debugger;
     var sidePaneDetails;
@@ -89,6 +91,8 @@ function initPage() {
 
     currentCategory = "all";
     currentCategoryId = 0;
+
+    sameAreaIsSelected = 0;
 
     loadSidePane(sidePaneDetails);
     debugger;
@@ -451,18 +455,12 @@ function loadSidePane(sidePaneDetails) {
     debugger;
     var totalProducts = sidePaneDetails.length;
     debugger;
-    // document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='allAreaClick()' data-parent='#area' href='#collapseArea"+(-1)+"' data-toggle='collapse' id='' class='list-group-item'>"
-    //     + "All Products" +
-    //     "<span id='sonarCountAll' class='badge' style='width:45px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
-    //     "<span id='issueCountAll' class='badge' style='width:35px; background-color:#F4A94E; padding:3px 6px;'></span></button>" +
-    //     "</div>"
-
 
     for (var x = 0; x < totalProducts; x++) {
         document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='"+(sidePaneDetails[x].id)+"' class='list-group-item'>"
             + sidePaneDetails[x].name        +
-            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:45px; background-color:#206898;padding:3px 6px;'></span>" +
-            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:35px; background-color:#FF9933; padding:3px 6px;'></span></button>" +
+            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:2.8vw; font-size: 0.8vw; background-color:#206898;padding:3px 6px;'></span>" +
+            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:2.3vw; font-size: 0.8vw; background-color:#FF9933; padding:3px 6px;'></span></button>" +
             "<div id='collapseArea"+(sidePaneDetails[x].id)+"'  style='transition: all .8s ease;' class='panel-collapse collapse' role='tabpanel' aria-labelledby='headingOne'>" +
             "<div class='sidebarInside'>" +
             "<ul id='product"+(sidePaneDetails[x].id)+"' >"+
@@ -487,8 +485,8 @@ function loadSidePaneAtReset(sidePaneDetails) {
     for (var x = 0; x < totalProducts; x++) {
         document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='"+(sidePaneDetails[x].id)+"' class='list-group-item'>"
             + sidePaneDetails[x].name        +
-            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:45px; background-color:#206898;padding:3px 6px;'></span>" +
-            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:35px; background-color:#FF9933; padding:3px 6px;'></span></button>" +
+            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:2.8vw; font-size: 0.8vw; background-color:#206898;padding:3px 6px;'></span>" +
+            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:2.3vw; font-size: 0.8vw; background-color:#FF9933; padding:3px 6px;'></span></button>" +
             "<div id='collapseArea"+(sidePaneDetails[x].id)+"'  style='transition: all .8s ease;' class='panel-collapse collapse' role='tabpanel' aria-labelledby='headingOne'>" +
             "<div class='sidebarInside'>" +
             "<ul id='product"+(sidePaneDetails[x].id)+"' >"+
@@ -543,6 +541,8 @@ function allAreaClick() {
     currentCategory = "all";
     currentCategoryId = 0;
 
+    sameAreaIsSelected = 0;
+
     document.getElementById('componentChoice').innerHTML = "";
     loadSidePaneAtReset(sidePaneDetails);
     initChart(content);
@@ -551,6 +551,17 @@ function allAreaClick() {
 }
 
 function leftMenuAreaClick(areaId){
+    if(currentAreaId === areaId){
+        sameAreaIsSelected = sameAreaIsSelected + 1;
+
+        if(sameAreaIsSelected === 3){
+            sameAreaIsSelected = 1;
+        }
+
+    }else{
+        sameAreaIsSelected = 1;
+    }
+
     currentCategoryId = areaId;
     currentCategory = "area";
     currentAreaId = areaId;
@@ -582,34 +593,52 @@ function leftMenuAreaClick(areaId){
     var sidePaneDetails;
     var content;
     debugger;
-    $.ajax({
-        type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/'+ areaId,
-        async: false,
-        success: function(data){
-            debugger;
-            sidePaneDetails = data.data.items;
-            content = data.data;
-            currentData = content;
+
+    if(sameAreaIsSelected === 2){
+        $.ajax({
+            type: "GET",
+            url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all/',
+            async: false,
+            success: function(data){
+                debugger;
+                content = data.data;
+                currentData = content;
+            }
+        });
+        debugger;
+    }else{
+        $.ajax({
+            type: "GET",
+            url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/'+ areaId,
+            async: false,
+            success: function(data){
+                debugger;
+                sidePaneDetails = data.data.items;
+                content = data.data;
+                currentData = content;
+            }
+        });
+        debugger;
+
+        var totalProducts = sidePaneDetails.length;
+
+        for(var y=0;y<totalProducts;y++){
+            issuecount = sidePaneDetails[y].issues;
+            sonarCount = sidePaneDetails[y].sonar;
+
+            document.getElementById('product'+(areaId)).innerHTML +=
+                "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'>" +
+                sidePaneDetails[y].name +
+                "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:2.8vw; font-size: 0.8vw; background-color:#206898;padding:3px 6px;'></span>" +
+                "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:2.3vw; font-size: 0.8vw; background-color:#FF9933; padding:3px 6px;'></span></button>";
+
+            document.getElementById('issueProductCount'+areaId+(parseInt(y))).innerHTML = issuecount;
+            document.getElementById('sonarProductCount'+areaId+(parseInt(y))).innerHTML = sonarCount;
         }
-    });
-    debugger;
-
-    var totalProducts = sidePaneDetails.length;
-
-    for(var y=0;y<totalProducts;y++){
-        issuecount = sidePaneDetails[y].issues;
-        sonarCount = sidePaneDetails[y].sonar;
-
-        document.getElementById('product'+(areaId)).innerHTML +=
-            "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'>" +
-            sidePaneDetails[y].name +
-            "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:45px; background-color:#206898;padding:3px 6px;'></span>" +
-            "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:35px; background-color:#FF9933; padding:3px 6px;'></span></button>";
-        
-        document.getElementById('issueProductCount'+areaId+(parseInt(y))).innerHTML = issuecount;
-        document.getElementById('sonarProductCount'+areaId+(parseInt(y))).innerHTML = sonarCount;
     }
+
+
+
 
     initChart(content);
     initSonarChart(content);

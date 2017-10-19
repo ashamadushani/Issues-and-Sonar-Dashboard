@@ -99,7 +99,7 @@
                     <div id="componentChoice" class="row" style=""></div>
                 </div>
                 <div class="col-xs-6" style="text-align:right">
-                    <button type="button" id="resetView" class="btn btn-default">Reset View</button>
+                    <button type="button" id="resetView" class="btn btn-default">Reset to All Products</button>
                 </div>
             </div>
         </div>

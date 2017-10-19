@@ -26,11 +26,14 @@
     <style type="text/css">
         body {
             overflow:hidden;
+            font-size:0.8vw !important;
         }
+
         .sidebarInside{
             max-height:500px !important;
             overflow:hidden;
             overflow-y:auto;
+            font-size:0.8vw !important;
 
         }
 
@@ -45,7 +48,10 @@
             height: 830px;
             overflow-y: scroll;
             position: relative;
+            font-size:0.8vw !important;
+
         }
+
         .mam-light-issues{
 	        color:#fff!important;
 	        background-color:#FF9933!important;
@@ -99,7 +105,7 @@
                     <div id="componentChoice" class="row" style=""></div>
                 </div>
                 <div class="col-xs-6" style="text-align:right">
-                    <button type="button" id="resetView" class="btn btn-default">Reset to All Products</button>
+                    <button type="button" id="resetView" class="btn btn-default" style="font-size:0.8vw">Reset to All Products</button>
                 </div>
             </div>
         </div>
@@ -121,25 +127,25 @@
                             <div  id="issueDiv" class="row">
                                 <div class=" col-xs-12 col-md-12">
 
-                                    <h3>Issues</h3>
+                                    <h3 style="font-size:1.3vw">Issues</h3>
                                     <div class="mam-container" style="background-color:#FFF7F2; padding: 15px; border: solid #a9a9a9 1px;">
                                         <div class="container-fluid" >
                                             <div>
                                                 <div class="row">
                                                     <div class="col-md-2" style="text-align:center"></div>
                                                     <div class="form-group col-md-3"  style="text-align:center">
-                                                        <h4>Issue Type</h4>
+                                                        <h4 style="font-size:1vw">Issue Type</h4>
                                                         <select class="form-control" id='issuetype-choice' style="width:300px; padding: 5px;">
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-2" style="text-align:center; margin-top: 40px;">
-                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()">
+                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-sixe=0.8vw">
                                                             Reset
                                                         </button>
                                                     </div>
                                                     <div class="form-group col-md-3" style="text-align:center">
-                                                        <h4>Severity</h4>
+                                                        <h4 style="font-size:1vw">Severity</h4>
                                                         <select class="form-control" id='severity-choice' style="width:300px; padding: 5px;">
                                                             <option value="0">All</option>
                                                         </select>
@@ -154,7 +160,7 @@
                                             <div class="mam-container col-xs-12" style="">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-issues"  id="main-graph-header">
-                                                        <h4>Issue Type Breakdown Chart</h4>
+                                                        <h4 style="font-size:1vw">Issue Type Breakdown Chart</h4>
                                                     </header>
                                                     <div>
                                                         <div  id="main-chart-container" class="" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
@@ -168,7 +174,7 @@
                                             <div class="mam-container col-xs-6" style="">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-issues"  id="issuetype-graph-header">
-                                                        <h4>Issue Type Breakdown Chart</h4>
+                                                        <h4 style="font-size:1vw">Issue Type Breakdown Chart</h4>
                                                     </header>
                                                     <div class="">
                                                         <div  id="issuetype-chart-container" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
@@ -178,7 +184,7 @@
                                             <div class="col-xs-6">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-issues" id="severity-graph-header">
-                                                        <h4>Severity Breakdown Chart</h4>
+                                                        <h4 style="font-size:1vw">Severity Breakdown Chart</h4>
                                                     </header>
                                                     <div>
                                                         <div  id="severity-chart-container" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
@@ -193,7 +199,7 @@
                                                     <header class="mam-light-issues" id="trend-graph-header">
                                                         <div class="row" style="margin:0px 3px 0px 3px">
                                                             <div class="col-xs-4">
-                                                                <h4>Historical Trend</h4>
+                                                                <h4 style="font-size:1vw">Historical Trend</h4>
                                                             </div>
                                                             <div class="col-xs-8">
                                                                 <div class="row">
@@ -241,25 +247,25 @@
                             <div id="sonarDiv" class="row">
                                 <div class=" col-xs-12 col-md-12">
 
-                                    <h3>Sonar</h3>
+                                    <h3 style="font-size:1.3vw">Sonar</h3>
                                     <div class="card" style="background-color:#F2F7FF; padding: 15px; border: solid #a9a9a9 1px;">
                                         <div class="container-fluid" >
                                             <div>
                                                 <div class="row">
                                                     <div class="col-md-2" style="text-align:center"></div>
                                                     <div class="form-group col-md-3"  style="text-align:center">
-                                                        <h4>Issue Type</h4>
+                                                        <h4 style="font-size:1vw">Issue Type</h4>
                                                         <select class="form-control" id='sonar-issuetype-choice' style="width:300px; padding: 5px;">
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-2" style="text-align:center; margin-top: 40px;">
-                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()">
+                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:0.8vw">
                                                             Reset
                                                         </button>
                                                     </div>
                                                     <div class="form-group col-md-3" style="text-align:center">
-                                                        <h4>Severity</h4>
+                                                        <h4 style="font-size:1vw">Severity</h4>
                                                         <select class="form-control" id='sonar-severity-choice' style="width:300px; padding: 5px;">
                                                             <option value="0">All</option>
                                                         </select>
@@ -272,7 +278,7 @@
                                             <div class="col-xs-12" style="padding:15px">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-sonar" id="main-graph-header-sonar">
-                                                        <h4>Issue Type Breakdown Chart</h4>
+                                                        <h4 style="font-size:1vw" style="font-size:1vw">Issue Type Breakdown Chart</h4>
                                                     </header>
                                                     <div>
                                                         <div  id="main-chart-container-sonar" class="" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
@@ -286,7 +292,7 @@
                                             <div class="col-xs-6" style="">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-sonar" id="issuetype-graph-header-sonar">
-                                                        <h4>Issue Type Breakdown Chart</h4>
+                                                        <h4 style="font-size:1vw" style="font-size:1vw">Issue Type Breakdown Chart</h4>
                                                     </header>
                                                     <div class="">
                                                         <div  id="issuetype-chart-container-sonar" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
@@ -296,7 +302,7 @@
                                             <div class="col-xs-6">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-sonar" id="severity-graph-header-sonar" style="background-colour:">
-                                                        <h4>Severity Breakdown Chart</h4>
+                                                        <h4 style="font-size:1vw" style="font-size:1vw">Severity Breakdown Chart</h4>
                                                     </header>
                                                     <div class="">
                                                         <div  id="severity-chart-container-sonar" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
@@ -312,7 +318,7 @@
                                                     <header class="mam-light-sonar" id="trend-graph-header">
                                                         <div class="row" style="margin:0px 3px 0px 3px">
                                                             <div class="col-xs-4">
-                                                                <h4>Historical Trend</h4>
+                                                                <h4 style="font-size:1vw" style="font-size:1vw">Historical Trend</h4>
                                                             </div>
                                                             <div class="col-xs-8">
                                                                 <div class="row">

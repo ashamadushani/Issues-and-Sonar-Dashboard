@@ -48,7 +48,7 @@
         }
         .mam-light-issues{
 	        color:#fff!important;
-	        background-color:#FF6600!important;
+	        background-color:#FF9933!important;
 	    }
 
         .mam-light-sonar{
@@ -81,7 +81,7 @@
             <div class="row" style="margin-top:15px;">
                 <div class="col-xs-6">
                     <div class="row">
-                        <div class="col-xs-2"><div style="background-color:#FF6600; height:15px; width:15px;"></div></div>
+                        <div class="col-xs-2"><div style="background-color:#FF9933; height:15px; width:15px;"></div></div>
                         <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;">Issues</p></div>
                     </div>
                 </div>

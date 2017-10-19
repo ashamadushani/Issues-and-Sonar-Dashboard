@@ -60,7 +60,12 @@ var currentSonarSeverity;
 var currentCategory;
 
 var sameAreaIsSelected;
-var isExpanded;
+
+var issueIssueTypePieChartTitle;
+var issueSeverityPieChartTitle;
+var sonarIssueTypePieChartTitle;
+var sonarSeverityPieChartTitle;
+
 
 function initPage() {
     debugger;
@@ -145,6 +150,10 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
     selectIssueType.addEventListener('change',function(){
         var e = document.getElementById("sonar-issuetype-choice");
         var selectedSonarType = e.options[e.selectedIndex].value;
+        var selectedSonarTypeName = e.options[e.selectedIndex].text;
+
+        document.getElementById("sonarIssueTypeChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarTypeName;
+
         debugger;
 
         if(parseInt(selectedSonarType) !== 0){
@@ -174,6 +183,10 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
     selectSeverity.addEventListener('change',function(){
         var e = document.getElementById("sonar-severity-choice");
         var selectedSonarSeverity = e.options[e.selectedIndex].value;
+        var selectedSonarSeverityName = e.options[e.selectedIndex].text;
+
+        document.getElementById("sonarSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarSeverityName;
+
         debugger;
 
         if(parseInt(selectedSonarSeverity) !== 0){
@@ -206,6 +219,10 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
     selectIssueType.addEventListener('change',function(){
         var e = document.getElementById("issuetype-choice");
         var selectedType = e.options[e.selectedIndex].value;
+        var selectedTypeName = e.options[e.selectedIndex].text;
+
+        document.getElementById("issueIssueTypeChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedTypeName;
+
         debugger;
 
         if(parseInt(selectedType) !== 0){
@@ -236,6 +253,10 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
     selectSeverity.addEventListener('change',function(){
         var e = document.getElementById("severity-choice");
         var selectedSeverity = e.options[e.selectedIndex].value;
+        var selectedSeverityName = e.options[e.selectedIndex].text;
+
+        document.getElementById("issueSeverityChartHeader").innerHTML = "Severity Breakdown for "+ selectedSeverityName;
+
         debugger;
 
         if(parseInt(selectedSeverity) !== 0){
@@ -266,6 +287,7 @@ function selectIssueIssueTypePieChart(issueTypeId) {
     if (issueSeverityIsSelected === true){
         debugger;
         document.getElementById("severity-choice").disabled = true;
+        document.getElementById("issueArrow").innerHTML = '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>';
     }
 
     var content;
@@ -300,6 +322,7 @@ function selectIssueSeverityPieChart(severityId) {
     if (issueIssueTypeIsSelected === true){
         debugger;
         document.getElementById("issuetype-choice").disabled = true;
+        document.getElementById("issueArrow").innerHTML = '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>';
     }
 
     var content;
@@ -336,6 +359,7 @@ function selectSonarIssueTypePieChart(issueTypeId) {
     if (sonarSeverityIsSelected === true){
         debugger;
         document.getElementById("sonar-severity-choice").disabled = true;
+        document.getElementById("sonarArrow").innerHTML = '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>';
     }
 
     var content;
@@ -370,6 +394,7 @@ function selectSonarSeverityPieChart(severityId) {
     if (sonarIssueTypeIsSelected === true){
         debugger;
         document.getElementById("sonar-issuetype-choice").disabled = true;
+        document.getElementById("sonarArrow").innerHTML = '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>';
     }
     var content;
     $.ajax({
@@ -399,6 +424,8 @@ function resetSonarCharts() {
     document.getElementById("sonar-severity-choice").disabled = false;
     document.getElementById("sonar-issuetype-choice").selectedIndex = "0";
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
+
+    document.getElementById("sonarArrow").innerHTML = '';
 
     debugger;
     $.ajax({
@@ -431,6 +458,8 @@ function resetIssueCharts() {
     document.getElementById("issuetype-choice").selectedIndex = "0";
     document.getElementById("severity-choice").selectedIndex = "0";
 
+    document.getElementById("issueArrow").innerHTML = '';
+
     debugger;
     $.ajax({
         type: "GET",
@@ -459,8 +488,8 @@ function loadSidePane(sidePaneDetails) {
     for (var x = 0; x < totalProducts; x++) {
         document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='"+(sidePaneDetails[x].id)+"' class='list-group-item'>"
             + sidePaneDetails[x].name        +
-            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:2.8vw; font-size: 0.8vw; background-color:#206898;padding:3px 6px;'></span>" +
-            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:2.3vw; font-size: 0.8vw; background-color:#FF9933; padding:3px 6px;'></span></button>" +
+            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:2.7vw; font-size: 0.75vw; background-color:#206898;padding:3px 6px;'></span>" +
+            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:2.2vw; font-size: 0.75vw; background-color:#FF9933; padding:3px 6px;'></span></button>" +
             "<div id='collapseArea"+(sidePaneDetails[x].id)+"'  style='transition: all .8s ease;' class='panel-collapse collapse' role='tabpanel' aria-labelledby='headingOne'>" +
             "<div class='sidebarInside'>" +
             "<ul id='product"+(sidePaneDetails[x].id)+"' >"+
@@ -485,8 +514,8 @@ function loadSidePaneAtReset(sidePaneDetails) {
     for (var x = 0; x < totalProducts; x++) {
         document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='"+(sidePaneDetails[x].id)+"' class='list-group-item'>"
             + sidePaneDetails[x].name        +
-            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:2.8vw; font-size: 0.8vw; background-color:#206898;padding:3px 6px;'></span>" +
-            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:2.3vw; font-size: 0.8vw; background-color:#FF9933; padding:3px 6px;'></span></button>" +
+            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:2.7vw; font-size: 0.75vw; background-color:#206898;padding:3px 6px;'></span>" +
+            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:2.2vw; font-size: 0.75vw; background-color:#FF9933; padding:3px 6px;'></span></button>" +
             "<div id='collapseArea"+(sidePaneDetails[x].id)+"'  style='transition: all .8s ease;' class='panel-collapse collapse' role='tabpanel' aria-labelledby='headingOne'>" +
             "<div class='sidebarInside'>" +
             "<ul id='product"+(sidePaneDetails[x].id)+"' >"+
@@ -537,6 +566,9 @@ function allAreaClick() {
     document.getElementById("severity-choice").disabled = false;
     document.getElementById("issuetype-choice").selectedIndex = "0";
     document.getElementById("severity-choice").selectedIndex = "0";
+
+    document.getElementById("issueArrow").innerHTML = '';
+    document.getElementById("sonarArrow").innerHTML = '';
 
     currentCategory = "all";
     currentCategoryId = 0;
@@ -590,6 +622,9 @@ function leftMenuAreaClick(areaId){
     document.getElementById("sonar-issuetype-choice").selectedIndex = "0";
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
 
+    document.getElementById("issueArrow").innerHTML = '';
+    document.getElementById("sonarArrow").innerHTML = '';
+
     var sidePaneDetails;
     var content;
     debugger;
@@ -629,8 +664,8 @@ function leftMenuAreaClick(areaId){
             document.getElementById('product'+(areaId)).innerHTML +=
                 "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'>" +
                 sidePaneDetails[y].name +
-                "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:2.8vw; font-size: 0.8vw; background-color:#206898;padding:3px 6px;'></span>" +
-                "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:2.3vw; font-size: 0.8vw; background-color:#FF9933; padding:3px 6px;'></span></button>";
+                "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:2.7vw; font-size: 0.75vw; background-color:#206898;padding:3px 6px;'></span>" +
+                "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:2.2vw; font-size: 0.75vw; background-color:#FF9933; padding:3px 6px;'></span></button>";
 
             document.getElementById('issueProductCount'+areaId+(parseInt(y))).innerHTML = issuecount;
             document.getElementById('sonarProductCount'+areaId+(parseInt(y))).innerHTML = sonarCount;
@@ -670,6 +705,8 @@ function leftMenuProductClick(productId) {
     document.getElementById("sonar-issuetype-choice").selectedIndex = "0";
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
 
+    document.getElementById("issueArrow").innerHTML = '';
+    document.getElementById("sonarArrow").innerHTML = '';
 
     var sidePaneDetails;
     var content;
@@ -824,6 +861,9 @@ function loadComponentDetails(componentId) {
     document.getElementById("severity-choice").selectedIndex = "0";
     document.getElementById("sonar-issuetype-choice").selectedIndex = "0";
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
+
+    document.getElementById("issueArrow").innerHTML = '';
+    document.getElementById("sonarArrow").innerHTML = '';
 
 
     debugger;
@@ -1115,8 +1155,6 @@ function initSonarChart(content) {
     var dateTo= moment();
     sonarStartDate = dateFrom.format('YYYY-MM-DD');
     sonarEndDate = dateTo.format('YYYY-MM-DD');
-    // this.period = "day";
-    // history(category, "day");
     getSonarTrendLineHistory("day");
     debugger;
 
@@ -1427,13 +1465,7 @@ function createSonarSeverityChart(){
             enabled: false
         },
         legend: {
-            // layout: 'vertical',
-            // align: 'right',
-            // verticalAlign: 'top',
-            // y: 50,
             itemWidth: 150
-            // floating: false,
-            // backgroundColor: '#FCFFC5'
         },
         title: {
             text: currentSonarSeverityChartTitle
@@ -1469,7 +1501,6 @@ function createSonarSeverityChart(){
 
 function getIssueTrendLineHistory(period) {
     debugger;
-    var historyForAll;
     var history;
     $.ajax({
         type: "GET",
@@ -1502,7 +1533,6 @@ function getIssueTrendLineHistory(period) {
 
 function getSonarTrendLineHistory(period) {
     debugger;
-    var historyForAll;
     var history;
     $.ajax({
         type: "GET",
@@ -1645,12 +1675,7 @@ function setSonarDate(start, end) {
     console.log(sonarEndDate);
 }
 
-function setIssueCalender() {
 
-}
-function setSonarCalender() {
-
-}
 
 
 

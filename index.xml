@@ -71,7 +71,7 @@
 
 <div class="container-fluid" id="contents" >
     <div class="row" style="margin: 5px">
-        <br><br>
+
         <div class="col-xs-2">
             <div class="row" style="margin-top:15px;">
                 <div class="col-xs-6">
@@ -94,10 +94,9 @@
                     <div id="componentChoice" class="row" style=""></div>
                 </div>
                 <div class="col-xs-6" style="text-align:right">
-                    <button type="button" class="btn btn-secondary">Secondary</button>
+                    <button type="button" id="resetView" class="btn btn-default">Reset View</button>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="row">
@@ -485,23 +484,29 @@ $(window).on('load', function() {
         getSonarTrendLineHistory("Year");
     });
 
+    $('#resetView').click(function(){
+        allAreaClick();
+    });
+
 
     $('#issue-calender').on('apply.daterangepicker', function(ev, picker) {
 
         startDate = picker.startDate.format('YYYY-MM-DD');
         endDate = picker.endDate.format('YYYY-MM-DD');
-        setDate(startDate, endDate);
+        setIssueDate(startDate, endDate);
         console.log(startDate);
         console.log(endDate);
+        <!--setIssueCalender();-->
         getIssueTrendLineHistory("day");
     });
     $('#sonar-calender').on('apply.daterangepicker', function(ev, picker) {
 
         startDate = picker.startDate.format('YYYY-MM-DD');
         endDate = picker.endDate.format('YYYY-MM-DD');
-        setDate(startDate, endDate);
+        setSonarDate(startDate, endDate);
         console.log(startDate);
         console.log(endDate);
+        <!--setSonarCalender();-->
         getSonarTrendLineHistory("day");
     });
 

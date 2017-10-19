@@ -107,7 +107,7 @@ function loadTypeAndSeverityDropdowns() {
     $.ajax({
         type: "GET",
         // url: 'https://192.168.8.100:9092/internal/product-quality/v1.0/jira/getIssueTypesAndSeverities',
-        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/jira/getIssueTypesAndSeverities',
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/getIssueTypesAndSeverities',
         async: false,
         success: function(data){
             debugger;
@@ -144,6 +144,7 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         debugger;
 
         if(parseInt(selectedSonarType) !== 0){
+            debugger;
             for (var i = 0; i < sonarIssuetypeChart.series[0].data.length; i++) {
                 sonarIssuetypeChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
             }
@@ -172,6 +173,7 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         debugger;
 
         if(parseInt(selectedSonarSeverity) !== 0){
+            debugger;
             for (var i = 0; i < sonarSeverityChart.series[0].data.length; i++) {
                 debugger;
                 sonarSeverityChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
@@ -203,6 +205,7 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         debugger;
 
         if(parseInt(selectedType) !== 0){
+            debugger;
             for (var i = 0; i < issueIssuetypeChart.series[0].data.length; i++) {
                 issueIssuetypeChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
             }
@@ -232,6 +235,7 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         debugger;
 
         if(parseInt(selectedSeverity) !== 0){
+            debugger;
             for (var i = 0; i < issueSeverityChart.series[0].data.length; i++) {
                 issueSeverityChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
             }
@@ -447,11 +451,37 @@ function loadSidePane(sidePaneDetails) {
     debugger;
     var totalProducts = sidePaneDetails.length;
     debugger;
-    document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='allAreaClick()' data-parent='#area' href='#collapseArea"+(-1)+"' data-toggle='collapse' id='' class='list-group-item'>"
-        + "All Products" +
-        "<span id='sonarCountAll' class='badge' style='width:45px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
-        "<span id='issueCountAll' class='badge' style='width:35px; background-color:#F4A94E; padding:3px 6px;'></span></button>" +
-        "</div>"
+    // document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='allAreaClick()' data-parent='#area' href='#collapseArea"+(-1)+"' data-toggle='collapse' id='' class='list-group-item'>"
+    //     + "All Products" +
+    //     "<span id='sonarCountAll' class='badge' style='width:45px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
+    //     "<span id='issueCountAll' class='badge' style='width:35px; background-color:#F4A94E; padding:3px 6px;'></span></button>" +
+    //     "</div>"
+
+
+    for (var x = 0; x < totalProducts; x++) {
+        document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:-4px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='"+(sidePaneDetails[x].id)+"' class='list-group-item'>"
+            + sidePaneDetails[x].name        +
+            "<span id='sonarCount"+(parseInt(x)+1)+"' class='badge' style='width:45px; background-color:#4BC2DE;padding:3px 6px;'></span>" +
+            "<span id='issueCount"+(parseInt(x)+1)+"' class='badge' style='width:35px; background-color:#F4A94E; padding:3px 6px;'></span></button>" +
+            "<div id='collapseArea"+(sidePaneDetails[x].id)+"'  style='transition: all .8s ease;' class='panel-collapse collapse' role='tabpanel' aria-labelledby='headingOne'>" +
+            "<div class='sidebarInside'>" +
+            "<ul id='product"+(sidePaneDetails[x].id)+"' >"+
+            ""+
+            "</ul>"+
+            "</div>" +
+            "</div>" +
+            "</div>"
+
+        document.getElementById('issueCount'+(parseInt(x)+1)).innerHTML = sidePaneDetails[x].issues;
+        document.getElementById('sonarCount'+(parseInt(x)+1)).innerHTML = sidePaneDetails[x].sonar;
+    }
+}
+
+function loadSidePaneAtReset(sidePaneDetails) {
+    debugger;
+    var totalProducts = sidePaneDetails.length;
+    debugger;
+    document.getElementById('area').innerHTML = "";
 
 
     for (var x = 0; x < totalProducts; x++) {
@@ -503,6 +533,9 @@ function allAreaClick() {
     currentCategory = "all";
     currentCategoryId = 0;
 
+    document.getElementById('componentChoice').innerHTML = "";
+    loadSidePaneAtReset(sidePaneDetails);
+    loadTypeAndSeverityDropdowns();
     initChart(content);
     debugger;
     initSonarChart(content);
@@ -576,6 +609,7 @@ function leftMenuAreaClick(areaId){
 function leftMenuProductClick(productId) {
     debugger;
     currentCategoryId = productId;
+    currentProductId = productId;
     currentCategory = "product";
 
     currentIssueIssueType = 0;
@@ -657,9 +691,9 @@ function loadComponentDropdown(sidePaneDetails) {
     document.getElementById('componentChoice').innerHTML = "";
     var item = document.getElementById('componentChoice');
     var div1 = document.createElement('div');
-    div1.setAttribute("class","col-xs-1 col-md-1");
+    div1.setAttribute("class","col-xs-2 col-md-2");
     var headingTag = document.createElement("h4");
-    var heading = document.createTextNode("Component");
+    var heading = document.createTextNode("Component:");
     headingTag.appendChild(heading);
     div1.appendChild(headingTag);
     item.appendChild(div1);
@@ -678,13 +712,13 @@ function loadComponentDropdown(sidePaneDetails) {
     debugger;
 
     if(sidePaneDetails.length !== 0){
-        var optionNone =  document.createElement('option');
-        var idNone = -1;
-        var nameNone =  "Select a Component";
+        var optionAll =  document.createElement('option');
+        var all = 0;
+        var nameAll =  "All";
 
-        optionNone.setAttribute("value",idNone);
-        optionNone.appendChild(document.createTextNode(nameNone));
-        select.appendChild(optionNone);
+        optionAll.setAttribute("value",all);
+        optionAll.appendChild(document.createTextNode(nameAll));
+        select.appendChild(optionAll);
 
         var  totalComponents = sidePaneDetails.length;
         for(var a=0; a<totalComponents; a++) {
@@ -719,6 +753,8 @@ function loadComponentDropdown(sidePaneDetails) {
             }
             sonarMainChart.get(parseInt(strUser)).update({ color: '#118983' }, true, false);
             loadComponentDetails(parseInt(strUser));
+        }else{
+            leftMenuProductClick(currentProductId);
         }
     });
 
@@ -937,6 +973,39 @@ function initSonarChart(content) {
         createSonarMainChart();
 
     }
+
+    if (currentCategory === "component" && sonarIssueTypeIsSelected === true && sonarSeverityIsSelected === true){
+        debugger;
+        productData = content.items;
+
+        mainSeriesData = [];
+        totalMainIssues = 0;
+
+        if(productData.length !== 0){
+
+            for(var i = 0; i < productData.length; i++){
+                name = productData[i].name;
+                id = productData[i].id;
+                y = productData[i].sonar;
+                totalMainIssues += y;
+
+                if (id === currentCategoryId){
+                    mainSeriesData.push({name: name, id:id, y: y, color: '#118983'});
+                }else{
+                    mainSeriesData.push({name: name, id:id, y: y, color: '#a2a3a3'});
+                }
+            }
+
+        }
+        currentSonarMainChartTitle = "Total : " + totalMainIssues;
+
+        currentSonarMainChartData = [{
+            name: "Products",
+            colorByPoint: true, data: mainSeriesData
+        }]
+        createSonarMainChart();
+    }
+
 
     //set the data for the issuetype chart
     if(sonarIssueTypeIsSelected === false){

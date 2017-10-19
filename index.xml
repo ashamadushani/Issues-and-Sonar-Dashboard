@@ -89,13 +89,13 @@
                 <div class="col-xs-6">
                     <div class="row">
                         <div class="col-xs-2"><div style="background-color:#FF9933; height:15px; width:15px;"></div></div>
-                        <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;">Issues</p></div>
+                        <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;"><a href="#issueDiv">Issues</a></p></div>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="row">
                         <div class="col-xs-2"><div style="background-color:#206898; height:15px; width:15px;"></div></div>
-                        <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;">Sonar</p></div>
+                        <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;"><a href="#sonarDiv">Sonar</a></p></div>
                     </div>
                 </div>
             </div>
@@ -149,8 +149,8 @@
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-xs-2 col-md-2" style="text-align:center">
-                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-sixe=0.8vw">
+                                                    <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px;">
+                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-size:0.8vw">
                                                             Reset
                                                         </button>
                                                     </div>
@@ -159,8 +159,8 @@
                                         </div>
 
 
-                                        <div class="row" style="padding-bottom: 15px">
-                                            <div class="mam-container col-xs-12" style="">
+                                        <div class="row">
+                                            <div class="col-xs-12" style="padding:15px">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-issues"  id="main-graph-header">
                                                         <h4 style="font-size:1vw">Issue Type Breakdown Chart</h4>
@@ -271,7 +271,7 @@
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-xs-2 col-md-2" style="text-align:center">
+                                                    <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px">
                                                         <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:0.8vw">
                                                             Reset
                                                         </button>
@@ -279,7 +279,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row" style="">
+                                        <div class="row">
                                             <div class="col-xs-12" style="padding:15px">
                                                 <div class="mam-card">
                                                     <header class="mam-container mam-light-sonar" id="main-graph-header-sonar">

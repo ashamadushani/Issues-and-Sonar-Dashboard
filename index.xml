@@ -150,8 +150,8 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px;">
-                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-size:0.8vw">
-                                                            Reset
+                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-size:1.1vw" data-toggle="tooltip" data-placement="bottom" title="Reset Filters">
+                                                            <i class="fa fa-refresh" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -272,8 +272,8 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px">
-                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:0.8vw">
-                                                            Reset
+                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:1.1vw" data-toggle="tooltip" data-placement="bottom" title="Reset Filters">
+                                                            <i class="fa fa-refresh" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -531,7 +531,11 @@ $(window).on('load', function() {
 
 </script>
 
-
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 
 
 </body>

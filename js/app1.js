@@ -681,6 +681,7 @@ function leftMenuAreaClick(areaId){
 }
 
 function leftMenuProductClick(productId) {
+
     debugger;
     currentCategoryId = productId;
     currentProductId = productId;
@@ -932,7 +933,7 @@ function initChart(content) {
                 id = productData[i].id;
                 y = productData[i].issues;
                 totalMainIssues += y;
-                
+
                 if (id === currentCategoryId){
                     mainSeriesData.push({name: name, id:id, y: y, color: '#118983'});
                 }else{
@@ -1524,6 +1525,7 @@ function getIssueTrendLineHistory(period) {
     historySeriesData = [];
 
     for(var i = 0; i < history.length; i++){
+        // time = history[i].date.split("+");
         name = history[i].date;
         y = history[i].count;
         historySeriesData.push({name: name, y: y});
@@ -1555,7 +1557,9 @@ function getSonarTrendLineHistory(period) {
     historySeriesData = [];
 
     for(var i = 0; i < history.length; i++){
-        name = history[i].date;
+        time = history[i].date.split("+");
+        name = time[0];
+        // name = history[i].date;
         y = history[i].count;
         historySeriesData.push({name: name, y: y});
     }

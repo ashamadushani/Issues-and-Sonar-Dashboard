@@ -136,7 +136,7 @@
                                                     <div class="col-xs-2 col-md-2" style="text-align:center"></div>
                                                     <div class="form-group col-xs-3 col-md-3"  style="text-align:center">
                                                         <h4 style="font-size:1vw">Issue Type</h4>
-                                                        <select class="form-control" id='issuetype-choice' style=" padding: 5px;">
+                                                        <select class="form-control" id='issuetype-choice' style=" padding: 5px;font-size:0.8vw;">
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
@@ -145,7 +145,7 @@
                                                     </div>
                                                     <div class="form-group col-xs-3 col-md-3" style="text-align:center">
                                                         <h4 style="font-size:1vw">Severity</h4>
-                                                        <select class="form-control" id='severity-choice' style="padding: 5px;">
+                                                        <select class="form-control" id='severity-choice' style="padding: 5px;font-size:0.8vw;">
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
@@ -258,7 +258,7 @@
                                                     <div class="col-xs-2 col-md-2" style="text-align:center"></div>
                                                     <div class="form-group col-xs-3 col-md-3"  style="text-align:center">
                                                         <h4 style="font-size:1vw">Issue Type</h4>
-                                                        <select class="form-control" id='sonar-issuetype-choice' style="padding: 5px;">
+                                                        <select class="form-control" id='sonar-issuetype-choice' style="padding: 5px;font-size:0.8vw;">
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>
@@ -267,7 +267,7 @@
                                                     </div>
                                                     <div class="form-group col-xs-3 col-md-3" style="text-align:center">
                                                         <h4 style="font-size:1vw">Severity</h4>
-                                                        <select class="form-control" id='sonar-severity-choice' style=" padding: 5px;">
+                                                        <select class="form-control" id='sonar-severity-choice' style=" padding: 5px;font-size:0.8vw;">
                                                             <option value="0">All</option>
                                                         </select>
                                                     </div>

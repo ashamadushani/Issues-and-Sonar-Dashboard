@@ -46,9 +46,14 @@
             overflow-y: scroll;
             position: relative;
         }
-        .mam-light-grey{
-	        color:#000!important;
-	        background-color:#EFEEEE!important
+        .mam-light-issues{
+	        color:#fff!important;
+	        background-color:#FF6600!important;
+	    }
+
+        .mam-light-sonar{
+	        color:#fff!important;
+	        background-color:#206898!important
         }
 
         .mam-container{
@@ -76,13 +81,13 @@
             <div class="row" style="margin-top:15px;">
                 <div class="col-xs-6">
                     <div class="row">
-                        <div class="col-xs-2"><div style="background-color:#F4A94E; height:15px; width:15px;"></div></div>
+                        <div class="col-xs-2"><div style="background-color:#FF6600; height:15px; width:15px;"></div></div>
                         <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;">Issues</p></div>
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <div class="row">
-                        <div class="col-xs-2"><div style="background-color:#4BC2DE; height:15px; width:15px;"></div></div>
+                        <div class="col-xs-2"><div style="background-color:#206898; height:15px; width:15px;"></div></div>
                         <div class="col-xs-10"><p style="margin-left:18px; margin-top:-19px;">Sonar</p></div>
                     </div>
                 </div>
@@ -113,11 +118,11 @@
                             </div>
                         </div>
                         <div class="right-scrolling-body col-xs-10 col-md-10" style="border: solid #a9a9a9 1px">
-                            <div class="row">
+                            <div  id="issueDiv" class="row">
                                 <div class=" col-xs-12 col-md-12">
 
                                     <h3>Issues</h3>
-                                    <div class="mam-container" style="background-color:#f7f7f7; padding: 15px; border: solid #a9a9a9 1px;">
+                                    <div class="mam-container" style="background-color:#FFF7F2; padding: 15px; border: solid #a9a9a9 1px;">
                                         <div class="container-fluid" >
                                             <div>
                                                 <div class="row">
@@ -145,21 +150,24 @@
                                         </div>
 
 
-                                        <div class="mam-container row" style="padding:15px;">
-                                            <div class="mam-card col-xs-12">
-                                                <div>
-
+                                        <div class="row" style="padding-bottom: 15px">
+                                            <div class="mam-container col-xs-12" style="">
+                                                <div class="mam-card">
+                                                    <header class="mam-container mam-light-issues"  id="main-graph-header">
+                                                        <h4>Issue Type Breakdown Chart</h4>
+                                                    </header>
                                                     <div>
                                                         <div  id="main-chart-container" class="" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
 
                                         <div class="row">
                                             <div class="mam-container col-xs-6" style="">
                                                 <div class="mam-card">
-                                                    <header class="mam-container mam-light-grey"  id="issuetype-graph-header">
+                                                    <header class="mam-container mam-light-issues"  id="issuetype-graph-header">
                                                         <h4>Issue Type Breakdown Chart</h4>
                                                     </header>
                                                     <div class="">
@@ -169,7 +177,7 @@
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="mam-card">
-                                                    <header class="mam-container mam-light-grey" id="severity-graph-header">
+                                                    <header class="mam-container mam-light-issues" id="severity-graph-header">
                                                         <h4>Severity Breakdown Chart</h4>
                                                     </header>
                                                     <div>
@@ -182,7 +190,7 @@
                                         <div class="row" style="padding:15px 0px 15px 0px;">
                                             <div class="col-xs-12" style="">
                                                 <div class="mam-card">
-                                                    <header class="mam-light-grey" id="trend-graph-header">
+                                                    <header class="mam-light-issues" id="trend-graph-header">
                                                         <div class="row" style="margin:0px 3px 0px 3px">
                                                             <div class="col-xs-4">
                                                                 <h4>Historical Trend</h4>
@@ -193,8 +201,8 @@
                                                                     <div class="col-xs-4">
                                                                         <p style="text-align: right; margin-top:10px">Select a Date Range:</p>
                                                                     </div>
-                                                                    <div class="col-xs-5" style="margin-top:3px; margin-right:0px;margin-left:0px">
-                                                                        <label class="pull-right" id="issue-calender" style="padding:5px 20px 5px 20px; background: #fff; cursor: pointer; #ccc;">
+                                                                    <div class="col-xs-5" style="margin-top:5px; margin-right:0px;margin-left:0px">
+                                                                        <label class="pull-right" id="issue-calender" style="padding:5px 20px 5px 20px; background: #fff;color:#000 ;cursor: pointer; #ccc;">
                                                                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
                                                                             <span></span> <b class="caret"></b>
                                                                         </label>
@@ -230,11 +238,11 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div id="sonarDiv" class="row">
                                 <div class=" col-xs-12 col-md-12">
 
                                     <h3>Sonar</h3>
-                                    <div class="card" style="background-color:#f7f7f7; padding: 15px; border: solid #a9a9a9 1px;">
+                                    <div class="card" style="background-color:#F2F7FF; padding: 15px; border: solid #a9a9a9 1px;">
                                         <div class="container-fluid" >
                                             <div>
                                                 <div class="row">
@@ -260,12 +268,12 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-                                        <div class="mam-container row" style="padding:15px;">
-                                            <div class="mam-card col-xs-12">
-                                                <div>
-
+                                        <div class="row" style="">
+                                            <div class="col-xs-12" style="padding:15px">
+                                                <div class="mam-card">
+                                                    <header class="mam-container mam-light-sonar" id="main-graph-header-sonar">
+                                                        <h4>Issue Type Breakdown Chart</h4>
+                                                    </header>
                                                     <div>
                                                         <div  id="main-chart-container-sonar" class="" style="min-width: window.document.body.scrollWidth; height: window.document.body.scrollHeight - 40; margin: 0 auto"></div>
 
@@ -277,7 +285,7 @@
                                         <div class="row">
                                             <div class="col-xs-6" style="">
                                                 <div class="mam-card">
-                                                    <header class="mam-container mam-light-grey" id="issuetype-graph-header-sonar">
+                                                    <header class="mam-container mam-light-sonar" id="issuetype-graph-header-sonar">
                                                         <h4>Issue Type Breakdown Chart</h4>
                                                     </header>
                                                     <div class="">
@@ -287,7 +295,7 @@
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="mam-card">
-                                                    <header class="mam-container mam-light-grey" id="severity-graph-header-sonar">
+                                                    <header class="mam-container mam-light-sonar" id="severity-graph-header-sonar" style="background-colour:">
                                                         <h4>Severity Breakdown Chart</h4>
                                                     </header>
                                                     <div class="">
@@ -301,7 +309,7 @@
                                         <div class="row" style="padding:15px 0px 15px 0px;">
                                             <div class="col-xs-12" style="">
                                                 <div class="mam-card">
-                                                    <header class="mam-light-grey" id="trend-graph-header">
+                                                    <header class="mam-light-sonar" id="trend-graph-header">
                                                         <div class="row" style="margin:0px 3px 0px 3px">
                                                             <div class="col-xs-4">
                                                                 <h4>Historical Trend</h4>
@@ -312,8 +320,8 @@
                                                                     <div class="col-xs-4">
                                                                         <p style="text-align: right; margin-top:10px">Select a Date Range:</p>
                                                                     </div>
-                                                                    <div class="col-xs-5" style="margin-top:3px; margin-right:0px;margin-left:0px">
-                                                                        <label class="pull-right" id="sonar-calender" style="padding:5px 20px 5px 20px; background: #fff; cursor: pointer; #ccc;">
+                                                                    <div class="col-xs-5" style="margin-top:5px; margin-right:0px;margin-left:0px">
+                                                                        <label class="pull-right" id="sonar-calender" style="padding:5px 20px 5px 20px; background: #fff;color:#000 ;cursor: pointer; #ccc;">
                                                                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
                                                                             <span></span> <b class="caret"></b>
                                                                         </label>

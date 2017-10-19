@@ -152,7 +152,7 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         var selectedSonarType = e.options[e.selectedIndex].value;
         var selectedSonarTypeName = e.options[e.selectedIndex].text;
 
-        document.getElementById("sonarIssueTypeChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarTypeName;
+        document.getElementById("sonarSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarTypeName;
 
         debugger;
 
@@ -185,7 +185,7 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         var selectedSonarSeverity = e.options[e.selectedIndex].value;
         var selectedSonarSeverityName = e.options[e.selectedIndex].text;
 
-        document.getElementById("sonarSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarSeverityName;
+        document.getElementById("sonarIssueTypeChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarSeverityName;
 
         debugger;
 
@@ -221,7 +221,7 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         var selectedType = e.options[e.selectedIndex].value;
         var selectedTypeName = e.options[e.selectedIndex].text;
 
-        document.getElementById("issueIssueTypeChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedTypeName;
+        document.getElementById("issueSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedTypeName;
 
         debugger;
 
@@ -255,7 +255,7 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         var selectedSeverity = e.options[e.selectedIndex].value;
         var selectedSeverityName = e.options[e.selectedIndex].text;
 
-        document.getElementById("issueSeverityChartHeader").innerHTML = "Severity Breakdown for "+ selectedSeverityName;
+        document.getElementById("issueIssueTypeChartHeader").innerHTML = "Severity Breakdown for "+ selectedSeverityName;
 
         debugger;
 

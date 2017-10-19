@@ -73,8 +73,8 @@ function initPage() {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
-        // url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/all',
+        // url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/all',
         async: false,
         success: function(data){
             debugger;
@@ -116,7 +116,7 @@ function loadTypeAndSeverityDropdowns() {
     $.ajax({
         type: "GET",
         // url: 'https://192.168.8.100:9092/internal/product-quality/v1.0/jira/getIssueTypesAndSeverities',
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/getIssueTypesAndSeverities',
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/getIssueTypesAndSeverities',
         async: false,
         success: function(data){
             debugger;
@@ -152,7 +152,7 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         var selectedSonarType = e.options[e.selectedIndex].value;
         var selectedSonarTypeName = e.options[e.selectedIndex].text;
 
-        document.getElementById("sonarSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarTypeName;
+        // document.getElementById("sonarSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarTypeName;
 
         debugger;
 
@@ -185,7 +185,7 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         var selectedSonarSeverity = e.options[e.selectedIndex].value;
         var selectedSonarSeverityName = e.options[e.selectedIndex].text;
 
-        document.getElementById("sonarIssueTypeChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarSeverityName;
+        // document.getElementById("sonarIssueTypeChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarSeverityName;
 
         debugger;
 
@@ -221,7 +221,7 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         var selectedType = e.options[e.selectedIndex].value;
         var selectedTypeName = e.options[e.selectedIndex].text;
 
-        document.getElementById("issueSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedTypeName;
+        // document.getElementById("issueSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedTypeName;
 
         debugger;
 
@@ -255,7 +255,7 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         var selectedSeverity = e.options[e.selectedIndex].value;
         var selectedSeverityName = e.options[e.selectedIndex].text;
 
-        document.getElementById("issueIssueTypeChartHeader").innerHTML = "Severity Breakdown for "+ selectedSeverityName;
+        // document.getElementById("issueIssueTypeChartHeader").innerHTML = "Severity Breakdown for "+ selectedSeverityName;
 
         debugger;
 
@@ -282,7 +282,7 @@ function selectIssueIssueTypePieChart(issueTypeId) {
         issueIssueTypeIsSelected = false;
     }
 
-    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
+    var url = 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
 
     if (issueSeverityIsSelected === true){
         debugger;
@@ -316,7 +316,7 @@ function selectIssueSeverityPieChart(severityId) {
     }else{
         issueSeverityIsSelected = false;
     }
-    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
+    var url = 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
 
 
     if (issueIssueTypeIsSelected === true){
@@ -354,7 +354,7 @@ function selectSonarIssueTypePieChart(issueTypeId) {
         debugger;
         sonarIssueTypeIsSelected = false;
     }
-    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+issueTypeId+'/severity/'+currentSonarSeverity;
+    var url = 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/sonar/issues/issuetype/'+issueTypeId+'/severity/'+currentSonarSeverity;
 
     if (sonarSeverityIsSelected === true){
         debugger;
@@ -389,7 +389,7 @@ function selectSonarSeverityPieChart(severityId) {
         debugger;
         sonarSeverityIsSelected = false;
     }
-    var url = 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentSonarIssueType+'/severity/'+severityId;
+    var url = 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentSonarIssueType+'/severity/'+severityId;
 
     if (sonarIssueTypeIsSelected === true){
         debugger;
@@ -430,7 +430,7 @@ function resetSonarCharts() {
     debugger;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentSonarIssueType+'/severity/'+currentSonarSeverity,
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/sonar/issues/issuetype/'+currentSonarIssueType+'/severity/'+currentSonarSeverity,
         async: false,
         data:{
             category: currentCategory,
@@ -463,7 +463,7 @@ function resetIssueCharts() {
     debugger;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity,
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity,
         async: false,
         data:{
             category: currentCategory,
@@ -536,8 +536,8 @@ function allAreaClick() {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
-        // url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all',
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/all',
+        // url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/all',
         async: false,
         success: function(data){
             debugger;
@@ -632,7 +632,7 @@ function leftMenuAreaClick(areaId){
     if(sameAreaIsSelected === 2){
         $.ajax({
             type: "GET",
-            url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all/',
+            url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/all/',
             async: false,
             success: function(data){
                 debugger;
@@ -644,7 +644,7 @@ function leftMenuAreaClick(areaId){
     }else{
         $.ajax({
             type: "GET",
-            url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/area/'+ areaId,
+            url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/area/'+ areaId,
             async: false,
             success: function(data){
                 debugger;
@@ -712,7 +712,7 @@ function leftMenuProductClick(productId) {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/product/'+productId ,
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/product/'+productId ,
         async: false,
         success: function(data){
             debugger;
@@ -870,7 +870,7 @@ function loadComponentDetails(componentId) {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/component/' + componentId,
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/issues/component/' + componentId,
         async: false,
         success: function(data){
             debugger;
@@ -1504,7 +1504,7 @@ function getIssueTrendLineHistory(period) {
     var history;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/github/issues/history/'+ currentCategory + '/' + currentCategoryId,
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/github/issues/history/'+ currentCategory + '/' + currentCategoryId,
         data:{
             severityId: currentIssueSeverity,
             issuetypeId: currentIssueIssueType,
@@ -1536,7 +1536,7 @@ function getSonarTrendLineHistory(period) {
     var history;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/sonar/issues/history/'+ currentCategory + '/' + currentCategoryId,
+        url: 'https://a42e4b5b.ngrok.io/internal/product-quality/v1.0/sonar/issues/history/'+ currentCategory + '/' + currentCategoryId,
         data:{
             issuetypeId: currentSonarIssueType,
             severityId: currentSonarSeverity,

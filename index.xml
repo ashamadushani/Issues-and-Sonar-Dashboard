@@ -74,6 +74,10 @@
         }
         .btn-product-active{
             background:#a1bdcc;
+            color:#000000!important;
+            border-style:solid;
+            border-width:3px;
+            border-color:#000000;
         }
         .btn-product-inactive{
             background:#d9edf7;
@@ -157,7 +161,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px;">
-                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-size:1.1vw" data-placement="bottom" title="Reset Filters">
+                                                        <button  type="button" class="btn btn-default" onclick="resetIssueCharts()" style="font-size:1.1vw;display:none;f" data-placement="bottom" title="Reset Filters">
                                                             <i class="fa fa-refresh" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -279,7 +283,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-2 col-md-2" style="text-align:center;margin-top:40px">
-                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:1.1vw" data-placement="bottom" title="Reset Filters">
+                                                        <button type="button" class="btn btn-default" onclick="resetSonarCharts()" style="font-size:1.1vw;display:none;" data-placement="bottom" title="Reset Filters">
                                                             <i class="fa fa-refresh" aria-hidden="true"></i>
                                                         </button>
                                                     </div>

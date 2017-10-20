@@ -538,13 +538,7 @@ $(window).on('load', function() {
 
 </script>
 
-<script>
-  $(document).ready(function(){
-  $('.btn-product').click(function(){
-    $('.btn-product').removeClass('btn-product-active').addClass('btn-product-inactive');
-     $(this).removeClass('btn-product-inactive').addClass('btn-product-active');
-    });
-})
+
 </script>
 
 

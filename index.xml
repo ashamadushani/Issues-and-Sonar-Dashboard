@@ -72,7 +72,7 @@
 	        background-color:#FFFFFF
         }
         .btn-product{
-
+            color:#000000;
         }
         .btn-product-active{
             background:#a1bdcc;

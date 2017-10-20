@@ -1586,7 +1586,7 @@ function createIssueTrendChart(data){
             zoomType: 'x'
         },
         legend: {
-                  enabled: false
+            enabled: false
         },
         title: {
             text: ""
@@ -1602,12 +1602,6 @@ function createIssueTrendChart(data){
         credits: {
             enabled: false
         },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-
         plotOptions: {
             series: {
                 borderWidth: 0,
@@ -1618,7 +1612,7 @@ function createIssueTrendChart(data){
             }
         },
         tooltip: {
-            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            headerFormat: '<span style="font-size:11px">Issues</span><br>',
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> of total<br/>'
         },
         series: [{
@@ -1663,7 +1657,7 @@ function createSonarTrendChart(data){
             }
         },
         tooltip: {
-            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            headerFormat: '<span style="font-size:11px">Sonar</span><br>',
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> of total<br/>'
         },
         series: [{

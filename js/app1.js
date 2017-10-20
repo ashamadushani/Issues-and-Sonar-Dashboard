@@ -630,6 +630,9 @@ function leftMenuAreaClick(areaId){
     debugger;
 
     if(sameAreaIsSelected === 2){
+        currentCategoryId = 0;
+        currentCategory = "all";
+
         $.ajax({
             type: "GET",
             url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/issues/all/',
@@ -662,9 +665,9 @@ function leftMenuAreaClick(areaId){
             sonarCount = sidePaneDetails[y].sonar;
 
             document.getElementById('product'+(areaId)).innerHTML +=
-                "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'>" +
+                "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'><a href='#'>" +
                 sidePaneDetails[y].name +
-                "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:2.7vw; font-size: 0.75vw; background-color:#206898;padding:3px 6px;'></span>" +
+                "</a><span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:2.7vw; font-size: 0.75vw; background-color:#206898;padding:3px 6px;'></span>" +
                 "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:2.2vw; font-size: 0.75vw; background-color:#FF9933; padding:3px 6px;'></span></button>";
 
             document.getElementById('issueProductCount'+areaId+(parseInt(y))).innerHTML = issuecount;
@@ -672,9 +675,6 @@ function leftMenuAreaClick(areaId){
 
         }
     }
-
-
-
 
     initChart(content);
     initSonarChart(content);
@@ -1589,11 +1589,6 @@ function createIssueTrendChart(data){
         credits: {
             enabled: false
         },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
         plotOptions: {
             series: {
                 borderWidth: 0,
@@ -1635,11 +1630,6 @@ function createSonarTrendChart(data){
             title: {
                 text: 'Number of Issues'
             }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
         },
         plotOptions: {
             series: {

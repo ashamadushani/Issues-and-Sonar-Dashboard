@@ -287,7 +287,11 @@ function selectIssueIssueTypePieChart(issueTypeId) {
     if (issueSeverityIsSelected === true){
         debugger;
         document.getElementById("severity-choice").disabled = true;
-        document.getElementById("issueArrow").innerHTML = '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>';
+        document.getElementById("issueArrow").innerHTML = '<i class="fa fa-long-arrow-left" aria-none="true"></i>';
+        debugger;
+        var refreshBtn = document.getElementById("resetIssueChartsId");
+        refreshBtn.style.display = 'initial';
+        debugger;
     }
 
     var content;
@@ -322,7 +326,9 @@ function selectIssueSeverityPieChart(severityId) {
     if (issueIssueTypeIsSelected === true){
         debugger;
         document.getElementById("issuetype-choice").disabled = true;
-        document.getElementById("issueArrow").innerHTML = '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>';
+        document.getElementById("issueArrow").innerHTML = '<i class="fa fa-long-arrow-right" aria-none="true"></i>';
+        var refreshBtn = document.getElementById("resetIssueChartsId");
+        refreshBtn.style.display = 'initial';
     }
 
     var content;
@@ -359,7 +365,9 @@ function selectSonarIssueTypePieChart(issueTypeId) {
     if (sonarSeverityIsSelected === true){
         debugger;
         document.getElementById("sonar-severity-choice").disabled = true;
-        document.getElementById("sonarArrow").innerHTML = '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>';
+        document.getElementById("sonarArrow").innerHTML = '<i class="fa fa-long-arrow-left" aria-none="true"></i>';
+        var refreshBtn = document.getElementById("resetSonarChartsId");
+        refreshBtn.style.display = 'initial';
     }
 
     var content;
@@ -394,7 +402,9 @@ function selectSonarSeverityPieChart(severityId) {
     if (sonarIssueTypeIsSelected === true){
         debugger;
         document.getElementById("sonar-issuetype-choice").disabled = true;
-        document.getElementById("sonarArrow").innerHTML = '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>';
+        document.getElementById("sonarArrow").innerHTML = '<i class="fa fa-long-arrow-right" aria-none="true"></i>';
+        var refreshBtn = document.getElementById("resetSonarChartsId");
+        refreshBtn.style.display = 'initial';
     }
     var content;
     $.ajax({
@@ -426,6 +436,8 @@ function resetSonarCharts() {
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
 
     document.getElementById("sonarArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetSonarChartsId");
+    refreshBtn.style.display = 'none';
 
     debugger;
     $.ajax({
@@ -459,6 +471,8 @@ function resetIssueCharts() {
     document.getElementById("severity-choice").selectedIndex = "0";
 
     document.getElementById("issueArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetIssueChartsId");
+    refreshBtn.style.display = 'none';
 
     debugger;
     $.ajax({
@@ -475,6 +489,8 @@ function resetIssueCharts() {
             currentData = content;
         }
     });
+
+
 
     initChart(content);
     debugger;

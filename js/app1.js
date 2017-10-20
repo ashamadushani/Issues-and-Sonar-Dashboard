@@ -665,9 +665,9 @@ function leftMenuAreaClick(areaId){
             sonarCount = sidePaneDetails[y].sonar;
 
             document.getElementById('product'+(areaId)).innerHTML +=
-                "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'><a href='#'>" +
+                "<button onclick='leftMenuProductClick("+(sidePaneDetails[y].id)+")' class='list-group-item list-group-item-info' style='width:100%;text-align: left;' id='" + sidePaneDetails[y].id + "'>"+
                 sidePaneDetails[y].name +
-                "</a><span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:2.7vw; font-size: 0.75vw; background-color:#206898;padding:3px 6px;'></span>" +
+                "<span id='sonarProductCount"+areaId+(parseInt(y))+"' class='badge' style='min-width:2.7vw; font-size: 0.75vw; background-color:#206898;padding:3px 6px;'></span>" +
                 "<span id='issueProductCount"+areaId+(parseInt (y))+"' class='badge' style='min-width:2.2vw; font-size: 0.75vw; background-color:#FF9933; padding:3px 6px;'></span></button>";
 
             document.getElementById('issueProductCount'+areaId+(parseInt(y))).innerHTML = issuecount;
@@ -745,7 +745,7 @@ function leftMenuVersionClick(version) {
     var content;
     $.ajax({
         type: "GET",
-        url: 'https://10.100.4.110:9092/internal/product-quality/v1.0/jira/issues/summary/' + productId + '/version/' + version,
+        url: 'https://10.100.4.222:9092/internal/product-quality/v1.0/jira/issues/summary/' + productId + '/version/' + version,
         async: false,
         success: function(data){
             debugger;
@@ -1185,7 +1185,7 @@ function createMainChart(){
             }
         },
         legend: {
-            enabled: false
+                enabled: false
         },
         plotOptions: {
             series: {
@@ -1575,6 +1575,9 @@ function createIssueTrendChart(data){
         chart: {
             zoomType: 'x'
         },
+        legend: {
+                  enabled: false
+        },
         title: {
             text: ""
         },
@@ -1622,6 +1625,9 @@ function createSonarTrendChart(data){
         },
         credits: {
             enabled: false
+        },
+        legend: {
+                enabled: false
         },
         xAxis: {
             type: 'category'

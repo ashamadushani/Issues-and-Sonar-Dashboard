@@ -539,9 +539,6 @@ $(window).on('load', function() {
 </script>
 
 
-</script>
-
-
 </body>
 </html>
 

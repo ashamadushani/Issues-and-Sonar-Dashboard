@@ -74,8 +74,12 @@
         .btn-product{
 
         }
-        .btn-product-active{background:#a1bdcc}
-        .btn-product-inactive{background:#d9edf7}
+        .btn-product-active{
+            background:#a1bdcc;
+        }
+        .btn-product-inactive{
+            background:#d9edf7;
+        }
     </style>
     <style type="text/css">
         .demo i {
@@ -537,9 +541,12 @@ $(window).on('load', function() {
 </script>
 
 <script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
+  $(document).ready(function(){
+  $('.btn-product').click(function(){
+    $('.btn-product').removeClass('btn-product-active').addClass('btn-product-inactive');
+     $(this).removeClass('btn-product-inactive').addClass('btn-product-active');
     });
+})
 </script>
 
 

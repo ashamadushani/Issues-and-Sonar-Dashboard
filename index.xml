@@ -74,10 +74,7 @@
         }
         .btn-product-active{
             background:#a1bdcc;
-            color:#000000!important;
-            border-style:solid;
-            border-width:3px;
-            border-color:#000000;
+            font-weight:bold;
         }
         .btn-product-inactive{
             background:#d9edf7;

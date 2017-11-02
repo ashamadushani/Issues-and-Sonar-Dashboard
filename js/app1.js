@@ -915,7 +915,7 @@ function initChart(content) {
         currentIssueMainChartTitle = "Total : " + totalMainIssues;
 
         currentIssueMainChartData = [{
-            name: "Products",
+            name: "Product",
             colorByPoint: true, data: mainSeriesData
         }]
         createMainChart();
@@ -946,7 +946,7 @@ function initChart(content) {
         currentIssueMainChartTitle = "Total : " + totalMainIssues;
 
         currentIssueMainChartData = [{
-            name: "Products",
+            name: "Component",
             colorByPoint: true, data: mainSeriesData
         }]
         createMainChart();
@@ -1047,7 +1047,7 @@ function initSonarChart(content) {
         currentSonarMainChartTitle = "Total : " + totalMainIssues;
 
         currentSonarMainChartData = [{
-            name: "Products",
+            name: "Product",
             colorByPoint: true, data: mainSeriesData
         }]
 
@@ -1081,7 +1081,7 @@ function initSonarChart(content) {
         currentSonarMainChartTitle = "Total : " + totalMainIssues;
 
         currentSonarMainChartData = [{
-            name: "Products",
+            name: "Component",
             colorByPoint: true, data: mainSeriesData
         }]
         createSonarMainChart();
@@ -1211,56 +1211,6 @@ function createMainChart(){
 
 }
 
-function createMainChartForComponent(){
-    //Create the chart
-    
-    this.issueMainChart = Highcharts.chart('main-chart-container', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: currentIssueMainChartTitle
-        },
-        credits: {
-            enabled: false
-        },
-        xAxis: {
-            type: 'category'
-        },
-        yAxis: {
-            title: {
-                text: 'Total open issues'
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        plotOptions: {
-            series: {
-                borderWidth: 0,
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.y}'
-                },
-                allowPointSelect: false,
-            }, column: {
-                maxPointWidth: 100
-            }
-        },
-
-        tooltip: {
-            headerFormat: '<span style="font-size:0.7387508394895903vw">{series.name}</span><br>',
-            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b>'
-        },
-
-        series: currentIssueMainChartData,
-
-        exporting: {
-            enabled: true
-        }
-    });
-
-}
 function createSonarMainChart(){
     //Create the chart
     

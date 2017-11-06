@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb2a0e12-a8a3-4270-b67e-d3030efe1ee5" name="Default" comment="Changed app.js">
+    <list default="true" id="cb2a0e12-a8a3-4270-b67e-d3030efe1ee5" name="Default" comment="adding bootstrap_3.3.5">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.xml" afterPath="$PROJECT_DIR$/index.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app1.js" afterPath="$PROJECT_DIR$/js/app1.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,24 +14,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="x.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/x.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-              <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app1.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="493" column="88" lean-forward="false" selection-start-line="493" selection-start-column="88" selection-end-line="493" selection-end-column="88" />
-              <folding />
+            <state relative-caret-position="190">
+              <caret line="734" column="47" lean-forward="true" selection-start-line="734" selection-start-column="47" selection-end-line="734" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#49482#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,18 +29,8 @@
       <file leaf-file-name="daterangepicker.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="892">
-              <caret line="796" column="45" lean-forward="false" selection-start-line="796" selection-start-column="45" selection-end-line="796" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="1926" column="10" lean-forward="true" selection-start-line="1926" selection-start-column="10" selection-end-line="1926" selection-end-column="10" />
+            <state relative-caret-position="1746">
+              <caret line="97" column="95" lean-forward="false" selection-start-line="97" selection-start-column="95" selection-end-line="97" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -61,8 +39,8 @@
       <file leaf-file-name="index.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1143">
-              <caret line="123" column="114" lean-forward="false" selection-start-line="123" selection-start-column="114" selection-end-line="123" selection-end-column="114" />
+            <state relative-caret-position="10188">
+              <caret line="566" column="19" lean-forward="false" selection-start-line="566" selection-start-column="19" selection-end-line="566" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -72,34 +50,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main-</find>
-      <find>main-gr</find>
-      <find>-container</find>
-      <find>Sonar</find>
-      <find>getHistoryForAll</find>
-      <find>callbackForStateChange</find>
-      <find>url</find>
-      <find>padding</find>
-      <find>hidde</find>
-      <find>select</find>
-      <find>platfor</find>
-      <find>createPlatformChart</find>
-      <find>createPlatformChart();</find>
-      <find>products</find>
-      <find>click</find>
-      <find>cho</find>
-      <find>portal</find>
-      <find>init</find>
-      <find>192.168.8.101</find>
-      <find>CARD</find>
-      <find>EFEEEE</find>
-      <find>card</find>
-      <find>reportran</find>
-      <find>input</find>
-      <find>daterangepicker</find>
-      <find>Click on</find>
-      <find>&lt;br&gt;</find>
-      <find>22px</find>
+      <find>/gadget/</find>
+      <find>/fs</find>
+      <find>carbon.super/</find>
+      <find>100%</find>
+      <find>style</find>
+      <find>style=</find>
+      <find>0.7387508394895903vw</find>
+      <find>issueDiv</find>
+      <find>fixedIssesDiv</find>
+      <find>margin-top:-4px</find>
+      <find>div3</find>
+      <find>z-index</find>
+      <find>300P</find>
+      <find>console.log(</find>
+      <find>refreshBtn</find>
+      <find>oncli</find>
+      <find>reset</find>
+      <find>resetV</find>
+      <find>allArea</find>
+      <find>loadSidePaneAtReset</find>
+      <find>tooltip:</find>
+      <find>currentIssueMainChartData</find>
+      <find>currentSonarIssueTypeChartData</find>
+      <find>createMainChartForComponent</find>
+      <find>currentSonarMainChartData</find>
+      <find>resetIssueCharts</find>
+      <find>resetSonarCharts</find>
+      <find>resetIssueChartsId</find>
+      <find>issueArrow</find>
+      <find>sonarArrow</find>
     </findStrings>
     <replaceStrings>
       <replace>//createPlatformChart();</replace>
@@ -107,6 +87,24 @@
       <replace>10.100.4.110</replace>
       <replace>&lt;h4&gt;</replace>
       <replace>&lt;/h4&gt;</replace>
+      <replace>#499cd2</replace>
+      <replace>#7a7a7a</replace>
+      <replace>mam-light-sonar</replace>
+      <replace>#ff6600</replace>
+      <replace>&lt;h3 style=&quot;font-size:1.3vw&quot;</replace>
+      <replace>&lt;h4 style=&quot;font-size:1vw&quot;</replace>
+      <replace>0.8vw</replace>
+      <replace>localhost</replace>
+      <replace>10.100.4.8</replace>
+      <replace>fixedIssesDiv</replace>
+      <replace>10.100.4.222</replace>
+      <replace>baseUrl+'</replace>
+      <replace>fs/gadget</replace>
+      <replace>fs/gadget/</replace>
+      <replace>/fs/gadget/</replace>
+      <replace>carbon.super/fs/</replace>
+      <replace>margin-top:0px</replace>
+      <replace>fixedIssuesDiv</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -124,16 +122,23 @@
         <option value="$PROJECT_DIR$/gadget.json" />
         <option value="$PROJECT_DIR$/x.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/daterangepicker.js" />
         <option value="$PROJECT_DIR$/index.xml" />
         <option value="$PROJECT_DIR$/js/app1.js" />
       </list>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="121" />
-    <option name="y" value="16" />
-    <option name="width" value="1400" />
-    <option name="height" value="864" />
+    <option name="x" value="75" />
+    <option name="y" value="34" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -151,9 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -170,127 +173,24 @@
             <path>
               <item name="issues_and_sonar_dashboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="issues_and_sonar_dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="issues_and_sonar_dashboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="issues_and_sonar_dashboard" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/js/app1.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -452,7 +352,245 @@
       <option name="project" value="LOCAL" />
       <updated>1508315350740</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changed app.js">
+      <created>1508317496626</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1508317496626</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changed app.js">
+      <created>1508324197414</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1508324197414</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changed app.js">
+      <created>1508326811169</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1508326811169</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changed app.js">
+      <created>1508327825044</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1508327825044</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed app.js">
+      <created>1508396827580</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1508396827580</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changed app.js">
+      <created>1508403740270</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1508403740270</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Changed app.js">
+      <created>1508404294716</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1508404294716</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Changed app.js">
+      <created>1508404640378</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1508404640378</updated>
+    </task>
+    <task id="LOCAL-00016" summary="index.xml changed">
+      <created>1508407433032</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1508407433032</updated>
+    </task>
+    <task id="LOCAL-00017" summary="adding font-awsome">
+      <created>1508410920521</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1508410920521</updated>
+    </task>
+    <task id="LOCAL-00018" summary="changing index.xml">
+      <created>1508411775096</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1508411775096</updated>
+    </task>
+    <task id="LOCAL-00019" summary="changing index.xml">
+      <created>1508416315956</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1508416315956</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Changed app.js">
+      <created>1508417226020</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1508417226020</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Adding reset filters">
+      <created>1508418518193</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1508418518193</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Changed app.js">
+      <created>1508430194697</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1508430194698</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Changed app.js">
+      <created>1508431149353</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1508431149353</updated>
+    </task>
+    <task id="LOCAL-00024" summary="adding bootstrap_3.3.5">
+      <created>1508468754532</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1508468754532</updated>
+    </task>
+    <task id="LOCAL-00025" summary="deletion">
+      <created>1508471438699</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1508471438699</updated>
+    </task>
+    <task id="LOCAL-00026" summary="adding bootstrap_3.3.5">
+      <created>1508485977308</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1508485977308</updated>
+    </task>
+    <task id="LOCAL-00027" summary="adding bootstrap_3.3.5">
+      <created>1508487232572</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1508487232572</updated>
+    </task>
+    <task id="LOCAL-00028" summary="adding bootstrap_3.3.5">
+      <created>1508490367665</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1508490367665</updated>
+    </task>
+    <task id="LOCAL-00029" summary="adding bootstrap_3.3.5">
+      <created>1508490588443</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1508490588443</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Testing active buttons">
+      <created>1508490780628</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1508490780628</updated>
+    </task>
+    <task id="LOCAL-00031" summary="adding bootstrap_3.3.5">
+      <created>1508491458913</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1508491458913</updated>
+    </task>
+    <task id="LOCAL-00032" summary="adding bootstrap_3.3.5">
+      <created>1508493186289</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1508493186289</updated>
+    </task>
+    <task id="LOCAL-00033" summary="adding bootstrap_3.3.5">
+      <created>1508497365233</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1508497365233</updated>
+    </task>
+    <task id="LOCAL-00034" summary="adding bootstrap_3.3.5">
+      <created>1508840469853</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1508840469853</updated>
+    </task>
+    <task id="LOCAL-00035" summary="adding bootstrap_3.3.5">
+      <created>1508843169826</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1508843169826</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Change the base url as variable">
+      <created>1508989146737</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1508989146737</updated>
+    </task>
+    <task id="LOCAL-00037" summary="adding bootstrap_3.3.5">
+      <created>1508998518424</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1508998518424</updated>
+    </task>
+    <task id="LOCAL-00038" summary="adding bootstrap_3.3.5">
+      <created>1509443211722</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1509443211722</updated>
+    </task>
+    <task id="LOCAL-00039" summary="x.html deleted">
+      <created>1509443557755</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1509443557755</updated>
+    </task>
+    <task id="LOCAL-00040" summary="adding bootstrap_3.3.5">
+      <created>1509601619716</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1509601619716</updated>
+    </task>
+    <task id="LOCAL-00041" summary="adding bootstrap_3.3.5">
+      <created>1509602459623</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1509602459623</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -465,13 +603,13 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25262576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30403537" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -482,9 +620,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -492,24 +630,182 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changed index.xml" />
+    <MESSAGE value="index.xml changed" />
+    <MESSAGE value="adding font-awsome" />
+    <MESSAGE value="changing index.xml" />
+    <MESSAGE value="Adding reset filters" />
     <MESSAGE value="Changed app.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed app.js" />
+    <MESSAGE value="deletion" />
+    <MESSAGE value="Testing active buttons" />
+    <MESSAGE value="Change the base url as variable" />
+    <MESSAGE value="x.html deleted" />
+    <MESSAGE value="adding bootstrap_3.3.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding bootstrap_3.3.5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/x.html">
+    <entry file="file://$PROJECT_DIR$/index.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+        <state relative-caret-position="7596">
+          <caret line="422" column="23" lean-forward="false" selection-start-line="422" selection-start-column="23" selection-end-line="422" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
+    <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="95" lean-forward="false" selection-start-line="97" selection-start-column="95" selection-end-line="97" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1422">
+          <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12438">
+          <caret line="691" column="8" lean-forward="false" selection-start-line="691" selection-start-column="8" selection-end-line="691" selection-end-column="8" />
           <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#0#49482#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
+    <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="95" lean-forward="false" selection-start-line="97" selection-start-column="95" selection-end-line="97" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1422">
+          <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12294">
+          <caret line="683" column="59" lean-forward="false" selection-start-line="683" selection-start-column="59" selection-end-line="683" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#49482#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
+    <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="95" lean-forward="false" selection-start-line="97" selection-start-column="95" selection-end-line="97" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3636">
+          <caret line="202" column="43" lean-forward="false" selection-start-line="202" selection-start-column="43" selection-end-line="202" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27738">
+          <caret line="1541" column="34" lean-forward="false" selection-start-line="1541" selection-start-column="34" selection-end-line="1541" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#49482#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
+    <entry file="file://$PROJECT_DIR$/js/app1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8586">
+          <caret line="477" column="24" lean-forward="false" selection-start-line="477" selection-start-column="24" selection-end-line="477" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#49482#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="95" lean-forward="false" selection-start-line="97" selection-start-column="95" selection-end-line="97" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2754">
+          <caret line="153" column="82" lean-forward="false" selection-start-line="153" selection-start-column="76" selection-end-line="153" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
+    <entry file="file://$PROJECT_DIR$/js/app1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9054">
+          <caret line="503" column="42" lean-forward="true" selection-start-line="503" selection-start-column="42" selection-end-line="503" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#49482#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="95" lean-forward="true" selection-start-line="97" selection-start-column="95" selection-end-line="97" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
+    <entry file="file://$PROJECT_DIR$/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="95" column="50" lean-forward="false" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
     <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14328">
@@ -518,14 +814,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34740">
-          <caret line="1930" column="10" lean-forward="false" selection-start-line="1930" selection-start-column="10" selection-end-line="1930" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
     <entry file="file://$PROJECT_DIR$/index.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5958">
@@ -534,16 +823,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/x.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="79" column="20" lean-forward="false" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
     <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14328">
@@ -552,14 +832,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34956">
-          <caret line="1942" column="9" lean-forward="true" selection-start-line="1942" selection-start-column="9" selection-end-line="1942" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
     <entry file="file://$PROJECT_DIR$/index.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5994">
@@ -568,24 +841,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/x.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="74" column="42" lean-forward="false" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34812">
-          <caret line="1934" column="38" lean-forward="true" selection-start-line="1934" selection-start-column="38" selection-end-line="1934" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
     <entry file="file://$PROJECT_DIR$/index.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
@@ -594,16 +851,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/x.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="116" column="203" lean-forward="false" selection-start-line="116" selection-start-column="203" selection-end-line="116" selection-end-column="203" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
     <entry file="file://$PROJECT_DIR$/index.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6336">
@@ -612,14 +860,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="89" column="46" lean-forward="false" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
     <entry file="file://$PROJECT_DIR$/gadget.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -627,16 +868,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/x.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
     <entry file="file://$PROJECT_DIR$/index.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1818">
@@ -667,45 +899,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/x.html">
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
+    <entry file="file://$PROJECT_DIR$/js/data.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="1926" column="10" lean-forward="true" selection-start-line="1926" selection-start-column="10" selection-end-line="1926" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/x.html" />
     <entry file="file://$PROJECT_DIR$/js/daterangepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="892">
-          <caret line="796" column="45" lean-forward="false" selection-start-line="796" selection-start-column="45" selection-end-line="796" selection-end-column="45" />
+        <state relative-caret-position="1746">
+          <caret line="97" column="95" lean-forward="false" selection-start-line="97" selection-start-column="95" selection-end-line="97" selection-end-column="95" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1143">
-          <caret line="123" column="114" lean-forward="false" selection-start-line="123" selection-start-column="114" selection-end-line="123" selection-end-column="114" />
+        <state relative-caret-position="10188">
+          <caret line="566" column="19" lean-forward="false" selection-start-line="566" selection-start-column="19" selection-end-line="566" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="493" column="88" lean-forward="false" selection-start-line="493" selection-start-column="88" selection-end-line="493" selection-end-column="88" />
-          <folding />
+        <state relative-caret-position="190">
+          <caret line="734" column="47" lean-forward="true" selection-start-line="734" selection-start-column="47" selection-end-line="734" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#49482#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

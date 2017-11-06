@@ -1,5 +1,5 @@
-var baseUrl='https://digitalops.services.wso2.com:9092/';
-
+var baseUrl='https://10.100.4.8:9092/';
+//digitalops.services.wso2.com
 var currentArea;
 var currentProduct;
 var currentVersion;
@@ -582,7 +582,12 @@ function allAreaClick() {
     document.getElementById("severity-choice").selectedIndex = "0";
 
     document.getElementById("issueArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetIssueChartsId");
+    refreshBtn.style.display = 'none';
+
     document.getElementById("sonarArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetSonarChartsId");
+    refreshBtn.style.display = 'none';
 
     currentCategory = "all";
     currentCategoryId = 0;
@@ -637,7 +642,12 @@ function leftMenuAreaClick(areaId){
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
 
     document.getElementById("issueArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetIssueChartsId");
+    refreshBtn.style.display = 'none';
+
     document.getElementById("sonarArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetSonarChartsId");
+    refreshBtn.style.display = 'none';
 
     var sidePaneDetails;
     var content;
@@ -725,7 +735,12 @@ function leftMenuProductClick(productId) {
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
 
     document.getElementById("issueArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetIssueChartsId");
+    refreshBtn.style.display = 'none';
+
     document.getElementById("sonarArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetSonarChartsId");
+    refreshBtn.style.display = 'none';
 
     var sidePaneDetails;
     var content;
@@ -869,10 +884,13 @@ function loadComponentDetails(componentId) {
     document.getElementById("sonar-severity-choice").selectedIndex = "0";
 
     document.getElementById("issueArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetIssueChartsId");
+    refreshBtn.style.display = 'none';
+
     document.getElementById("sonarArrow").innerHTML = '';
+    var refreshBtn = document.getElementById("resetSonarChartsId");
+    refreshBtn.style.display = 'none';
 
-
-    
     var content;
     $.ajax({
         type: "GET",

@@ -281,7 +281,7 @@ function selectIssueIssueTypePieChart(issueTypeId) {
         issueIssueTypeIsSelected = false;
     }
 
-    var url = baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
+    var url = baseUrl+'internal/product-quality/v1.0/github-jira/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
 
     if (issueSeverityIsSelected === true){
         
@@ -319,7 +319,7 @@ function selectIssueSeverityPieChart(severityId) {
     }else{
         issueSeverityIsSelected = false;
     }
-    var url = baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
+    var url = baseUrl+'internal/product-quality/v1.0/github-jira/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
 
 
     if (issueIssueTypeIsSelected === true){
@@ -476,7 +476,7 @@ function resetIssueCharts() {
     
     $.ajax({
         type: "GET",
-        url: baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity,
+        url: baseUrl+'internal/product-quality/v1.0/github-jira/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity,
         async: false,
         data:{
             category: currentCategory,

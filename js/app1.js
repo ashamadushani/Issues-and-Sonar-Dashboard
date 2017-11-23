@@ -1472,7 +1472,7 @@ function getIssueTrendLineHistory(period) {
     var history;
     $.ajax({
         type: "GET",
-        url: baseUrl+'internal/product-quality/v1.0/github/issues/history/'+ currentCategory + '/' + currentCategoryId,
+        url: baseUrl+'internal/product-quality/v1.0/github-jira/issues/history/'+ currentCategory + '/' + currentCategoryId,
         data:{
             severityId: currentIssueSeverity,
             issuetypeId: currentIssueIssueType,

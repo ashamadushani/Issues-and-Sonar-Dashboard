@@ -139,11 +139,6 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
         var e = document.getElementById("sonar-issuetype-choice");
         var selectedSonarType = e.options[e.selectedIndex].value;
         var selectedSonarTypeName = e.options[e.selectedIndex].text;
-
-        // document.getElementById("sonarSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedSonarTypeName;
-
-        
-
         if(parseInt(selectedSonarType) !== 0){
             
             for (var i = 0; i < sonarIssuetypeChart.series[0].data.length; i++) {

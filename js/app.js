@@ -908,7 +908,6 @@ function loadComponentDetails(componentId) {
 
 
 function initChart(content) {
-    
     //set the data for main chart
     if (currentCategory !== "component"){
         
@@ -1025,10 +1024,6 @@ function initChart(content) {
         currentIssueSeverityChartTitle = "Total : " + totalSeverityIssues;
         createSeverityChart();
     }
-
-    // createIssueCharts(category);
-
-    
     var dateFrom = moment().subtract(29, 'days');
     var dateTo= moment();
     issueStartDate = dateFrom.format('YYYY-MM-DD');
@@ -1038,9 +1033,6 @@ function initChart(content) {
 }
 
 function initSonarChart(content) {
-    
-
-    //set the data for main chart
     if (currentCategory !== "component"){
         
         productData = content.items;
@@ -1178,8 +1170,6 @@ function initSonarChart(content) {
 
 
 function createMainChart(){
-    //Create the chart
-    
     this.issueMainChart = Highcharts.chart('main-chart-container', {
         chart: {
             type: 'column'
@@ -1229,8 +1219,6 @@ function createMainChart(){
 }
 
 function createSonarMainChart(){
-    //Create the chart
-    
     this.sonarMainChart = Highcharts.chart('main-chart-container-sonar', {
         chart: {
             type: 'column'
@@ -1279,8 +1267,6 @@ function createSonarMainChart(){
 }
 
 function createIssueTypeChart(){
-    
-    // Create the chart
     this.issueIssuetypeChart = Highcharts.chart('issuetype-chart-container', {
         chart: {
             type: 'pie'
@@ -1292,11 +1278,6 @@ function createIssueTypeChart(){
             text: currentIssueIssueTypeChartTitle
         },
         legend: {
-            // layout: 'vertical',
-            // align: 'right',
-            // verticalAlign: 'top',
-            // y: 50,
-            // width: 100
             itemWidth: 150
         },
         plotOptions: {
@@ -1311,7 +1292,6 @@ function createIssueTypeChart(){
                 showInLegend: true,
             }
         },
-        // colors: ['#fff698', '#c8f0a8', '#50a35a', '#006d7c', '#66a6ae', '#d6a36e', '#b4e6ff', '#033656', '#deaa96'],
         tooltip: {
             headerFormat: '<span style="font-size:0.7387508394895903vw">{series.name}</span><br>',
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b><br/>'
@@ -1325,8 +1305,6 @@ function createIssueTypeChart(){
     });
 }
 function createSonarIssueTypeChart(){
-    
-    // Create the chart
     this.sonarIssuetypeChart = Highcharts.chart('issuetype-chart-container-sonar', {
         chart: {
             type: 'pie'
@@ -1338,12 +1316,7 @@ function createSonarIssueTypeChart(){
             text: currentSonarIssueTypeChartTitle
         },
         legend: {
-            // layout: 'vertical',
-            // align: 'right',
-            // verticalAlign: 'top',
-            // y: 50,
-            // width: 100
-            itemWidth: 150
+           itemWidth: 150
         },
         plotOptions: {
             pie: {
@@ -1357,7 +1330,6 @@ function createSonarIssueTypeChart(){
                 showInLegend: true,
             }
         },
-        // colors: ['#fff698', '#c8f0a8', '#50a35a', '#006d7c', '#66a6ae', '#d6a36e', '#b4e6ff', '#033656', '#deaa96'],
         tooltip: {
             headerFormat: '<span style="font-size:0.7387508394895903vw">{series.name}</span><br>',
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b><br/>'
@@ -1373,9 +1345,7 @@ function createSonarIssueTypeChart(){
 
 
 function createSeverityChart(){
-    // Create the chart
-    
-    this.issueSeverityChart = Highcharts.chart('severity-chart-container', {
+     this.issueSeverityChart = Highcharts.chart('severity-chart-container', {
         chart: {
             type: 'pie'
         },
@@ -1383,13 +1353,7 @@ function createSeverityChart(){
             enabled: false
         },
         legend: {
-            // layout: 'vertical',
-            // align: 'right',
-            // verticalAlign: 'top',
-            // y: 50,
             itemWidth: 150
-            // floating: false,
-            // backgroundColor: '#FCFFC5'
         },
         title: {
             text: currentIssueSeverityChartTitle
@@ -1406,7 +1370,6 @@ function createSeverityChart(){
                 showInLegend: true
             }
         },
-        // colors: ['#ffdba2', '#ffafa2', '#dd5f5f', '#bf0a0a', '#781f1f', '#8d3f3f', '#450000'],
         tooltip: {
             headerFormat: '<span style="font-size:0.7387508394895903vw">{series.name}</span><br>',
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b><br/>'
@@ -1421,8 +1384,6 @@ function createSeverityChart(){
 }
 
 function createSonarSeverityChart(){
-    // Create the chart
-    
     this.sonarSeverityChart = Highcharts.chart('severity-chart-container-sonar', {
         chart: {
             type: 'pie'
@@ -1484,7 +1445,6 @@ function getIssueTrendLineHistory(period) {
     historySeriesData = [];
 
     for(var i = 0; i < history.length; i++){
-        // time = history[i].date.split("+");
         name = history[i].date;
         y = history[i].count;
         historySeriesData.push({name: name, y: y});
@@ -1564,7 +1524,6 @@ function createIssueTrendChart(data){
         },
         series: [{
             type: 'line',
-            // name: 'USD to EUR',
             data: data
         }]
 
@@ -1609,7 +1568,6 @@ function createSonarTrendChart(data){
         },
         series: [{
             type: 'line',
-            // name: 'USD to EUR',
             data: data
         }]
 

@@ -1,16 +1,11 @@
 var baseUrl='https://digitalops.services.wso2.com:9092/';
-//var baseUrl='https://10.100.4.8:9092/';
 
-var currentArea;
-var currentProduct;
+
 var currentVersion;
-var currentComponent;
 var currentIssueIssueType;
 var currentIssueSeverity;
-var issueBoth;
 var currentSonarIssueType;
 var currentSonarSeverity;
-var sonarBoth;
 
 var issueStartDate;
 var issueEndDate;
@@ -60,11 +55,6 @@ var currentSonarSeverity;
 var currentCategory;
 
 var sameAreaIsSelected;
-
-var issueIssueTypePieChartTitle;
-var issueSeverityPieChartTitle;
-var sonarIssueTypePieChartTitle;
-var sonarSeverityPieChartTitle;
 
 
 function initPage() {
@@ -1170,7 +1160,7 @@ function initSonarChart(content) {
 
 
 function createMainChart(){
-    this.issueMainChart = Highcharts.chart('main-chart-container', {
+    issueMainChart = Highcharts.chart('main-chart-container', {
         chart: {
             type: 'column'
         },
@@ -1219,7 +1209,7 @@ function createMainChart(){
 }
 
 function createSonarMainChart(){
-    this.sonarMainChart = Highcharts.chart('main-chart-container-sonar', {
+    sonarMainChart = Highcharts.chart('main-chart-container-sonar', {
         chart: {
             type: 'column'
         },

@@ -1517,7 +1517,6 @@ function getSonarTrendLineHistory(period) {
     for(var i = 0; i < history.length; i++){
         time = history[i].date.split("+");
         name = time[0];
-        // name = history[i].date;
         y = history[i].count;
         historySeriesData.push({name: name, y: y});
     }

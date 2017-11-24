@@ -67,7 +67,7 @@ function initPage() {
             currentData = data.data;
         }
     });
-    
+
     issueIssueTypeIsSelected = false;
     issueSeverityIsSelected = false;
     sonarIssueTypeIsSelected = false;
@@ -84,11 +84,11 @@ function initPage() {
     sameAreaIsSelected = 0;
 
     loadSidePane(sidePaneDetails);
-    
+
     loadTypeAndSeverityDropdowns();
 
     initChart();
-    
+
     initSonarChart();
 
 
@@ -110,7 +110,7 @@ function loadTypeAndSeverityDropdowns() {
             
             sonarIssueTypes = data.data.sonarIssuetypes;
             sonarSeverities = data.data.sonarSeverities;
-            
+
         }
     });
     loadTypeAndSeverityDropdownsForIssues(issueIssueTypes, issueSeverities);

@@ -2,7 +2,6 @@ $(window).on('load', function() {
     initPage();
 
     var fixedIssesDivTop = $('.fixedIssesDiv').offset().top;
-    console.log($(window).width());
     $('.right-scrolling-body').scroll(function() {
         var currentScroll = $('.right-scrolling-body').scrollTop();
         var scrollTop = $('.right-scrolling-body').offset().top;

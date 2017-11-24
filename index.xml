@@ -86,8 +86,6 @@
         .fixedSonarDiv{
             background-color:#F2F7FF;
         }
-    </style>
-    <style type="text/css">
         .demo i {
             position: relative; bottom: 10px; right: 24px; top: auto; cursor: pointer;
         }

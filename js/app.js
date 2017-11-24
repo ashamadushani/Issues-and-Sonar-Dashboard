@@ -93,6 +93,7 @@ function initPage() {
 
 
 }
+
 function loadTypeAndSeverityDropdowns() {
     var issueIssueTypes;
     var issueSeverities;
@@ -780,7 +781,6 @@ function loadComponentDropdown(sidePaneDetails) {
 
 }
 
-
 function loadComponentDetails(componentId) {
     
     currentCategoryId = componentId;
@@ -1201,6 +1201,7 @@ function createIssueTypeChart(){
 
     });
 }
+
 function createSonarIssueTypeChart(){
     this.sonarIssuetypeChart = Highcharts.chart('issuetype-chart-container-sonar', {
         chart: {
@@ -1427,6 +1428,7 @@ function createIssueTrendChart(data){
     });
 
 }
+
 function createSonarTrendChart(data){
     
     Highcharts.chart('trend-chart-container-sonar', {

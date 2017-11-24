@@ -1462,9 +1462,6 @@ function createSonarSeverityChart(){
     });
 }
 
-
-
-
 function getIssueTrendLineHistory(period) {
     
     var history;

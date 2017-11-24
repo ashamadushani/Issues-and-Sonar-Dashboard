@@ -252,8 +252,6 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
         }
         selectIssueSeverityPieChart();
     });
-
-
 }
 
 
@@ -839,15 +837,13 @@ function loadComponentDetails(componentId) {
 
 function initChart() {
     //set the data for main chart
-    if (currentCategory !== "component"){
-        
-        productData = currentData.items;
+    productData = currentData.items;
+    mainSeriesData = [];
+    totalMainIssues = 0;
 
-        mainSeriesData = [];
-        totalMainIssues = 0;
+    if (currentCategory !== "component"){
 
         if(productData.length !== 0){
-
             for(var i = 0; i < productData.length; i++){
                 name = productData[i].name;
                 id = productData[i].id;
@@ -867,14 +863,8 @@ function initChart() {
         createMainChart();
     }
     if (currentCategory === "component"){
-        
-        productData = currentData.items;
-
-        mainSeriesData = [];
-        totalMainIssues = 0;
 
         if(productData.length !== 0){
-
             for(var i = 0; i < productData.length; i++){
                 name = productData[i].name;
                 id = productData[i].id;
@@ -954,6 +944,7 @@ function initChart() {
         currentIssueSeverityChartTitle = "Total : " + totalSeverityIssues;
         createSeverityChart();
     }
+
     var dateFrom = moment().subtract(29, 'days');
     var dateTo= moment();
     issueStartDate = dateFrom.format('YYYY-MM-DD');

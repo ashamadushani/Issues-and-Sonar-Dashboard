@@ -1,6 +1,5 @@
 var baseUrl='https://digitalops.services.wso2.com:9092/';
 
-
 var currentVersion;
 var currentIssueIssueType;
 var currentIssueSeverity;
@@ -53,7 +52,6 @@ var currentSonarIssueType;
 var currentSonarSeverity;
 
 var currentCategory;
-
 var sameAreaIsSelected;
 
 
@@ -66,7 +64,6 @@ function initPage() {
         url: baseUrl+'internal/product-quality/v1.0/issues/all',
         async: false,
         success: function(data){
-            
             sidePaneDetails = data.data.items;
             content = data.data;
             currentData = data.data;
@@ -91,6 +88,7 @@ function initPage() {
     loadSidePane(sidePaneDetails);
     
     loadTypeAndSeverityDropdowns();
+
     initChart(content);
     
     initSonarChart(content);
@@ -202,21 +200,22 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
     selectIssueType.addEventListener('change',function(){
         var e = document.getElementById("issuetype-choice");
         var selectedType = e.options[e.selectedIndex].value;
-        var selectedTypeName = e.options[e.selectedIndex].text;
+        // var selectedTypeName = e.options[e.selectedIndex].text;
 
-        // document.getElementById("issueSeverityChartHeader").innerHTML = "Issue Type Breakdown for "+ selectedTypeName;
+        currentIssueIssueType = parseInt(selectedType);
 
-        
+        if(currentIssueIssueType !== 0){
+            issueIssueTypeIsSelected = true;
 
-        if(parseInt(selectedType) !== 0){
-            
             for (var i = 0; i < issueIssuetypeChart.series[0].data.length; i++) {
                 issueIssuetypeChart.series[0].data[i].update({ color: '#a2a3a3' }, true, false);
             }
             issueIssuetypeChart.get(parseInt(selectedType)).update({ color: '#118983' }, true, false);
             issueIssuetypeChart.get(parseInt(selectedType)).select();
+        }else{
+            issueIssueTypeIsSelected = false;
         }
-        selectIssueIssueTypePieChart(parseInt(selectedType));
+        selectIssueIssueTypePieChart();
     });
 
 
@@ -256,15 +255,10 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
 }
 
 
-function selectIssueIssueTypePieChart(issueTypeId) {
-    currentIssueIssueType = issueTypeId;
-    if (issueTypeId !== 0){
-        issueIssueTypeIsSelected = true;
-    }else{
-        issueIssueTypeIsSelected = false;
-    }
+function selectIssueIssueTypePieChart() {
 
-    var url = baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
+
+    var url = baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity;
 
     if (issueSeverityIsSelected === true){
         
@@ -481,7 +475,6 @@ function resetIssueCharts() {
 function loadSidePane(sidePaneDetails) {
     
     var totalProducts = sidePaneDetails.length;
-    
 
     for (var x = 0; x < totalProducts; x++) {
         document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:0px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='a"+(sidePaneDetails[x].id)+"' class='list-group-item'>"

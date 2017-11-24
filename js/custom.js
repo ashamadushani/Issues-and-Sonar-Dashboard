@@ -142,7 +142,7 @@ $('#yearlyBtnSonar').click(function(){
 });
 
 $('#resetView').click(function(){
-    allAreaClick();
+    resetDashboardView();
 });
 
 

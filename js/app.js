@@ -134,7 +134,6 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
     selectIssueType.addEventListener('change',function(){
         var e = document.getElementById("sonar-issuetype-choice");
         var selectedSonarType = e.options[e.selectedIndex].value;
-        var selectedSonarTypeName = e.options[e.selectedIndex].text;
 
         currentSonarIssueType = parseInt(selectedSonarType);
 
@@ -168,7 +167,6 @@ function loadTypeAndSeverityDropdownsForSonar(issueTypes, severities) {
     selectSeverity.addEventListener('change',function(){
         var e = document.getElementById("sonar-severity-choice");
         var selectedSonarSeverity = e.options[e.selectedIndex].value;
-        var selectedSonarSeverityName = e.options[e.selectedIndex].text;
 
         currentSonarSeverity = parseInt(selectedSonarSeverity);
         if(currentSonarSeverity !== 0){
@@ -236,7 +234,6 @@ function loadTypeAndSeverityDropdownsForIssues(issueTypes, severities) {
     selectSeverity.addEventListener('change',function(){
         var e = document.getElementById("severity-choice");
         var selectedSeverity = e.options[e.selectedIndex].value;
-        var selectedSeverityName = e.options[e.selectedIndex].text;
 
         currentIssueSeverity = parseInt(selectedSeverity);
 
@@ -267,7 +264,6 @@ function selectIssueIssueTypePieChart() {
         refreshBtn.style.display = 'initial';
         
     }
-
 
     $.ajax({
         type: "GET",
@@ -463,9 +459,6 @@ function loadSidePaneAtReset(sidePaneDetails) {
 
     var totalProducts = sidePaneDetails.length;
 
-    document.getElementById('area').innerHTML = "";
-
-
     for (var x = 0; x < totalProducts; x++) {
             document.getElementById('area').innerHTML += "<div class='panel' style='margin-top:0px; margin-bottom:-4px; font-size: 100%;'><button onclick='leftMenuAreaClick("+sidePaneDetails[x].id+")' data-parent='#area' href='#collapseArea"+(sidePaneDetails[x].id)+"' data-toggle='collapse' id='a"+(sidePaneDetails[x].id)+"' class='list-group-item'>"
                 + sidePaneDetails[x].name        +
@@ -485,7 +478,7 @@ function loadSidePaneAtReset(sidePaneDetails) {
      }
 }
 
-function allAreaClick() {
+function resetDashboardView() {
     
     var sidePaneDetails;
     $.ajax({
@@ -533,9 +526,10 @@ function allAreaClick() {
     sameAreaIsSelected = 0;
 
     document.getElementById('componentChoice').innerHTML = "&nbsp;";
+    document.getElementById('area').innerHTML = "";
+
     loadSidePaneAtReset(sidePaneDetails);
     initChart();
-    
     initSonarChart();
 }
 
@@ -836,7 +830,6 @@ function loadComponentDetails(componentId) {
 
 
 function initChart() {
-    //set the data for main chart
     productData = currentData.items;
     mainSeriesData = [];
     totalMainIssues = 0;
@@ -855,13 +848,13 @@ function initChart() {
 
         }
         currentIssueMainChartTitle = "Total : " + totalMainIssues;
-
         currentIssueMainChartData = [{
             name: "Product",
             colorByPoint: true, data: mainSeriesData
         }]
         createMainChart();
     }
+
     if (currentCategory === "component"){
 
         if(productData.length !== 0){
@@ -880,7 +873,6 @@ function initChart() {
 
         }
         currentIssueMainChartTitle = "Total : " + totalMainIssues;
-
         currentIssueMainChartData = [{
             name: "Component",
             colorByPoint: true, data: mainSeriesData
@@ -888,7 +880,6 @@ function initChart() {
         createMainChart();
     }
 
-    //set the data for the issuetype chart
     if(issueIssueTypeIsSelected === false){
         
         issuetypeData = currentData.issueIssuetype;
@@ -918,8 +909,6 @@ function initChart() {
 
 
     if(issueSeverityIsSelected === false){
-        
-        //set the data for the severity chart
         severityData = currentData.issueSeverity;
 
         severitySeriesData = [];
@@ -954,13 +943,11 @@ function initChart() {
 }
 
 function initSonarChart() {
+    productData = currentData.items;
+    mainSeriesData = [];
+    totalMainIssues = 0;
+
     if (currentCategory !== "component"){
-        
-        productData = currentData.items;
-
-        mainSeriesData = [];
-        totalMainIssues = 0;
-
         if(productData.length !== 0){
 
             for(var i = 0; i < productData.length; i++){
@@ -975,7 +962,6 @@ function initSonarChart() {
 
 
         currentSonarMainChartTitle = "Total : " + totalMainIssues;
-
         currentSonarMainChartData = [{
             name: "Product",
             colorByPoint: true, data: mainSeriesData
@@ -986,12 +972,6 @@ function initSonarChart() {
     }
 
     if (currentCategory === "component"){
-        
-        productData = currentData.items;
-
-        mainSeriesData = [];
-        totalMainIssues = 0;
-
         if(productData.length !== 0){
 
             for(var i = 0; i < productData.length; i++){
@@ -1009,7 +989,6 @@ function initSonarChart() {
 
         }
         currentSonarMainChartTitle = "Total : " + totalMainIssues;
-
         currentSonarMainChartData = [{
             name: "Component",
             colorByPoint: true, data: mainSeriesData
@@ -1021,9 +1000,7 @@ function initSonarChart() {
     //set the data for the issuetype chart
     if(sonarIssueTypeIsSelected === false){
 
-        
         issuetypeData = currentData.sonarIssuetype;
-
         issuetypeSeriesData = [];
         totalIssuetypeIssues = 0;
 
@@ -1054,7 +1031,6 @@ function initSonarChart() {
 
 
     if(sonarSeverityIsSelected === false){
-        //set the data for the severity chart
         severityData = currentData.sonarSeverity;
 
         severitySeriesData = [];

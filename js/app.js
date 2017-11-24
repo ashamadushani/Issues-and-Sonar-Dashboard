@@ -74,7 +74,6 @@ function initPage() {
     $.ajax({
         type: "GET",
         url: baseUrl+'internal/product-quality/v1.0/issues/all',
-        // url: baseUrl+'internal/product-quality/v1.0/issues/all',
         async: false,
         success: function(data){
             
@@ -115,7 +114,6 @@ function loadTypeAndSeverityDropdowns() {
     var sonarSeverities;
     $.ajax({
         type: "GET",
-        // url: baseURL+'internal/product-quality/v1.0/jira/getIssueTypesAndSeverities',
         url: baseUrl+'internal/product-quality/v1.0/getIssueTypesAndSeverities',
         async: false,
         success: function(data){
@@ -281,7 +279,7 @@ function selectIssueIssueTypePieChart(issueTypeId) {
         issueIssueTypeIsSelected = false;
     }
 
-    var url = baseUrl+'internal/product-quality/v1.0/github-jira/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
+    var url = baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+issueTypeId+'/severity/'+currentIssueSeverity;
 
     if (issueSeverityIsSelected === true){
         
@@ -319,7 +317,7 @@ function selectIssueSeverityPieChart(severityId) {
     }else{
         issueSeverityIsSelected = false;
     }
-    var url = baseUrl+'internal/product-quality/v1.0/github-jira/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
+    var url = baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+severityId;
 
 
     if (issueIssueTypeIsSelected === true){
@@ -476,7 +474,7 @@ function resetIssueCharts() {
     
     $.ajax({
         type: "GET",
-        url: baseUrl+'internal/product-quality/v1.0/github-jira/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity,
+        url: baseUrl+'internal/product-quality/v1.0/github/issues/issuetype/'+currentIssueIssueType+'/severity/'+currentIssueSeverity,
         async: false,
         data:{
             category: currentCategory,
@@ -1472,7 +1470,7 @@ function getIssueTrendLineHistory(period) {
     var history;
     $.ajax({
         type: "GET",
-        url: baseUrl+'internal/product-quality/v1.0/github-jira/issues/history/'+ currentCategory + '/' + currentCategoryId,
+        url: baseUrl+'internal/product-quality/v1.0/github/issues/history/'+ currentCategory + '/' + currentCategoryId,
         data:{
             severityId: currentIssueSeverity,
             issuetypeId: currentIssueIssueType,
